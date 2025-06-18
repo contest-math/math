@@ -424,7 +424,39 @@
 	border: none;
 	}
 
+	.rtestquestionbuttons {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 1vw;
+	color: #003559;
+	text-decoration: underline;
+	font-weight: bold;
+	font-size: 1.1vmax;
+	font-family: "Tahoma";
+	line-height: 1;
+	cursor: pointer;
+	background: inherit;
+	border: none;
+	}
+
 	.testanswerbuttons {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 1vw;
+	color: #003559;
+	text-decoration: underline;
+	font-weight: bold;
+	font-size: 1.1vmax;
+	font-family: "Tahoma";
+	line-height: 1;
+	cursor: pointer;
+	background: inherit;
+	border: none;
+	}
+	
+	.rtestanswerbuttons {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -446,7 +478,7 @@
 	width: 8vw;
 	height: 6vh;
 	left: 50vw;
-	top: 8.4vh;
+	top: 8.75vh;
 	transform: translateX(-50%);
 	font-weight: bold;
 	font-size: 1.5vmax;
@@ -458,6 +490,7 @@
 	border: 4px solid #000000;
 	background-color: white;
 	line-height: 1;
+	box-sizing: border-box;
 	}
 
 	.testtimernumber {
@@ -491,6 +524,23 @@
 	line-height: 1;
 	justify-content: center;
 	align-items: center;
+	}
+
+	.rtestbigtitle {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	top: .5%;
+	}
+
+	.pausebutton {
+	position: absolute;
+	width: 6vh;
+	height: 6vh;
+	left: 55vw;
+	top: 8.75vh;
+	cursor: pointer;
+	pointer-events: auto;
 	}
 
 </style>
@@ -785,8 +835,9 @@
 		<div class="testtimernumber" id="testtimer2">
 			00
 		</div>
-
 	</div>
+
+	<img class="pausebutton" src="assets/images/pausebutton.png" alt="pause" id="testpausebutton">
 
 	<div class="testcontainers testquestionscontainer">
 	
@@ -1903,11 +1954,1095 @@
 
 
 <!--this is the random test mode section-->
+
 <div id="rtestpage" style="display: none">
 
-<div class= "practiceendbox">
-	Coming Soon!
+	<div class="testtimer">
+		<div class="testtimernumber" id="rtesttimer1">
+			40
+		</div>
+
+		<div>
+		:
+		</div>
+
+		<div class="testtimernumber" id="rtesttimer2">
+			00
+		</div>
+
+	</div>
+
+	<img class="pausebutton" src="assets/images/pausebutton.png" alt="pause" id="rtestpausebutton">
+
+	<div class="testcontainers testquestionscontainer">
+	
+		<div class ="bigtitle rtestbigtitle">
+            <span id="currentquestionrtest"></span>.
+        </div>
+
+		<img class="questionboxtest" id="rtestquestion" src="">
+
+		<div class="studybuttoncontainer">
+
+			<button class="studybutton" id="rtback">
+			Back
+			</button>
+
+			<button class="studybutton" id="rtnext">
+			Next
+			</button>
+
+		</div>
+
+	</div>
+
+	<div class="testcontainers testanswerscontainer">
+
+		<div class="testquestioncolumncontainer">
+		<div class="testquestioncolumn">
+		
+			<div class="testquestionrow">
+				<button class="rtestquestionbuttons" id="rtestquestionbutton1">1.</button>
+				<select id="rtestquestionanswer1">
+					<option value=""></option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>
+			<div class="testquestionrow">
+				<button class="rtestquestionbuttons" id="rtestquestionbutton2">2.</button>
+				<select id="rtestquestionanswer2">
+					<option value=""></option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>
+			<div class="testquestionrow">
+				<button class="rtestquestionbuttons" id="rtestquestionbutton3">3.</button>
+				<select id="rtestquestionanswer3">
+					<option value=""></option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>
+			<div class="testquestionrow">
+				<button class="rtestquestionbuttons" id="rtestquestionbutton4">4.</button>
+				<select id="rtestquestionanswer4">
+					<option value=""></option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>
+			<div class="testquestionrow">
+				<button class="rtestquestionbuttons" id="rtestquestionbutton5">5.</button>
+				<select id="rtestquestionanswer5">
+					<option value=""></option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>
+			<div class="testquestionrow">
+				<button class="rtestquestionbuttons" id="rtestquestionbutton6">6.</button>
+				<select id="rtestquestionanswer6">
+					<option value=""></option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>
+			<div class="testquestionrow">
+				<button class="rtestquestionbuttons" id="rtestquestionbutton7">7.</button>
+				<select id="rtestquestionanswer7">
+					<option value=""></option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>
+			<div class="testquestionrow">
+				<button class="rtestquestionbuttons" id="rtestquestionbutton8">8.</button>
+				<select id="rtestquestionanswer8">
+					<option value=""></option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>
+			<div class="testquestionrow">
+				<button class="rtestquestionbuttons" id="rtestquestionbutton9">9.</button>
+				<select id="rtestquestionanswer9">
+					<option value=""></option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>
+			<div class="testquestionrow">
+				<button class="rtestquestionbuttons" id="rtestquestionbutton10">10.</button>
+				<select id="rtestquestionanswer10">
+					<option value=""></option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>
+			<div class="testquestionrow">
+				<button class="rtestquestionbuttons" id="rtestquestionbutton11">11.</button>
+				<select id="rtestquestionanswer11">
+					<option value=""></option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>
+			<div class="testquestionrow">
+				<button class="rtestquestionbuttons" id="rtestquestionbutton12">12.</button>
+				<select id="rtestquestionanswer12">
+					<option value=""></option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>
+			<div class="testquestionrow">
+				<button class="rtestquestionbuttons" id="rtestquestionbutton13">13.</button>
+				<select id="rtestquestionanswer13">
+					<option value=""></option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>
+			<div class="testquestionrow">
+				<button class="rtestquestionbuttons" id="rtestquestionbutton14">14.</button>
+				<select id="rtestquestionanswer14">
+					<option value=""></option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>
+			<div class="testquestionrow">
+				<button class="rtestquestionbuttons" id="rtestquestionbutton15">15.</button>
+				<select id="rtestquestionanswer15">
+					<option value=""></option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>
+			<div class="testquestionrow">
+				<button class="rtestquestionbuttons" id="rtestquestionbutton16">16.</button>
+				<select id="rtestquestionanswer16">
+					<option value=""></option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>
+			<div class="testquestionrow">
+				<button class="rtestquestionbuttons" id="rtestquestionbutton17">17.</button>
+				<select id="rtestquestionanswer17">
+					<option value=""></option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>
+			<div class="testquestionrow">
+				<button class="rtestquestionbuttons" id="rtestquestionbutton18">18.</button>
+				<select id="rtestquestionanswer18">
+					<option value=""></option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>
+			<div class="testquestionrow">
+				<button class="rtestquestionbuttons" id="rtestquestionbutton19">19.</button>
+				<select id="rtestquestionanswer19">
+					<option value=""></option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>
+			<div class="testquestionrow">
+				<button class="rtestquestionbuttons" id="rtestquestionbutton20">20.</button>
+				<select id="rtestquestionanswer20">
+					<option value=""></option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="testquestioncolumn">
+			
+			<div class="testquestionrow">
+				<button class="rtestquestionbuttons" id="rtestquestionbutton21">21.</button>
+				<select id="rtestquestionanswer21">
+					<option value=""></option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>
+			<div class="testquestionrow">
+				<button class="rtestquestionbuttons" id="rtestquestionbutton22">22.</button>
+				<select id="rtestquestionanswer22">
+					<option value=""></option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>
+			<div class="testquestionrow">
+				<button class="rtestquestionbuttons" id="rtestquestionbutton23">23.</button>
+				<select id="rtestquestionanswer23">
+					<option value=""></option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>
+			<div class="testquestionrow">
+				<button class="rtestquestionbuttons" id="rtestquestionbutton24">24.</button>
+				<select id="rtestquestionanswer24">
+					<option value=""></option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>
+			<div class="testquestionrow">
+				<button class="rtestquestionbuttons" id="rtestquestionbutton25">25.</button>
+				<select id="rtestquestionanswer25">
+					<option value=""></option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>
+			<div class="testquestionrow">
+				<button class="rtestquestionbuttons" id="rtestquestionbutton26">26.</button>
+				<select id="rtestquestionanswer26">
+					<option value=""></option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>
+			<div class="testquestionrow">
+				<button class="rtestquestionbuttons" id="rtestquestionbutton27">27.</button>
+				<select id="rtestquestionanswer27">
+					<option value=""></option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>
+			<div class="testquestionrow">
+				<button class="rtestquestionbuttons" id="rtestquestionbutton28">28.</button>
+				<select id="rtestquestionanswer28">
+					<option value=""></option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>
+			<div class="testquestionrow">
+				<button class="rtestquestionbuttons" id="rtestquestionbutton29">29.</button>
+				<select id="rtestquestionanswer29">
+					<option value=""></option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>
+			<div class="testquestionrow">
+				<button class="rtestquestionbuttons" id="rtestquestionbutton30">30.</button>
+				<select id="rtestquestionanswer30">
+					<option value=""></option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>
+			<div class="testquestionrow">
+				<button class="rtestquestionbuttons" id="rtestquestionbutton31">31.</button>
+				<select id="rtestquestionanswer31">
+					<option value=""></option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>
+			<div class="testquestionrow">
+				<button class="rtestquestionbuttons" id="rtestquestionbutton32">32.</button>
+				<select id="rtestquestionanswer32">
+					<option value=""></option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>
+			<div class="testquestionrow">
+				<button class="rtestquestionbuttons" id="rtestquestionbutton33">33.</button>
+				<select id="rtestquestionanswer33">
+					<option value=""></option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>
+			<div class="testquestionrow">
+				<button class="rtestquestionbuttons" id="rtestquestionbutton34">34.</button>
+				<select id="rtestquestionanswer34">
+					<option value=""></option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>
+			<div class="testquestionrow">
+				<button class="rtestquestionbuttons" id="rtestquestionbutton35">35.</button>
+				<select id="rtestquestionanswer35">
+					<option value=""></option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>
+			<div class="testquestionrow">
+				<button class="rtestquestionbuttons" id="rtestquestionbutton36">36.</button>
+				<select id="rtestquestionanswer36">
+					<option value=""></option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>
+			<div class="testquestionrow">
+				<button class="rtestquestionbuttons" id="rtestquestionbutton37">37.</button>
+				<select id="rtestquestionanswer37">
+					<option value=""></option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>
+			<div class="testquestionrow">
+				<button class="rtestquestionbuttons" id="rtestquestionbutton38">38.</button>
+				<select id="rtestquestionanswer38">
+					<option value=""></option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>
+			<div class="testquestionrow">
+				<button class="rtestquestionbuttons" id="rtestquestionbutton39">39.</button>
+				<select id="rtestquestionanswer39">
+					<option value=""></option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>
+			<div class="testquestionrow">
+				<button class="rtestquestionbuttons" id="rtestquestionbutton40">40.</button>
+				<select id="rtestquestionanswer40">
+					<option value=""></option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>
+
+		</div>
+
+		<div class="testquestioncolumn">
+			
+			<div class="testquestionrow">
+				<button class="rtestquestionbuttons" id="rtestquestionbutton41">41.</button>
+				<select id="rtestquestionanswer41">
+					<option value=""></option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>
+			<div class="testquestionrow">
+				<button class="rtestquestionbuttons" id="rtestquestionbutton42">42.</button>
+				<select id="rtestquestionanswer42">
+					<option value=""></option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>
+			<div class="testquestionrow">
+				<button class="rtestquestionbuttons" id="rtestquestionbutton43">43.</button>
+				<select id="rtestquestionanswer43">
+					<option value=""></option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>
+			<div class="testquestionrow">
+				<button class="rtestquestionbuttons" id="rtestquestionbutton44">44.</button>
+				<select id="rtestquestionanswer44">
+					<option value=""></option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>
+			<div class="testquestionrow">
+				<button class="rtestquestionbuttons" id="rtestquestionbutton45">45.</button>
+				<select id="rtestquestionanswer45">
+					<option value=""></option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>
+			<div class="testquestionrow">
+				<button class="rtestquestionbuttons" id="rtestquestionbutton46">46.</button>
+				<select id="rtestquestionanswer46">
+					<option value=""></option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>
+			<div class="testquestionrow">
+				<button class="rtestquestionbuttons" id="rtestquestionbutton47">47.</button>
+				<select id="rtestquestionanswer47">
+					<option value=""></option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>
+			<div class="testquestionrow">
+				<button class="rtestquestionbuttons" id="rtestquestionbutton48">48.</button>
+				<select id="rtestquestionanswer48">
+					<option value=""></option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>
+			<div class="testquestionrow">
+				<button class="rtestquestionbuttons" id="rtestquestionbutton49">49.</button>
+				<select id="rtestquestionanswer49">
+					<option value=""></option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>
+			<div class="testquestionrow">
+				<button class="rtestquestionbuttons" id="rtestquestionbutton50">50.</button>
+				<select id="rtestquestionanswer50">
+					<option value=""></option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>
+			<div class="testquestionrow">
+				<button class="rtestquestionbuttons" id="rtestquestionbutton51">51.</button>
+				<select id="rtestquestionanswer51">
+					<option value=""></option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>
+			<div class="testquestionrow">
+				<button class="rtestquestionbuttons" id="rtestquestionbutton52">52.</button>
+				<select id="rtestquestionanswer52">
+					<option value=""></option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>
+			<div class="testquestionrow">
+				<button class="rtestquestionbuttons" id="rtestquestionbutton53">53.</button>
+				<select id="rtestquestionanswer53">
+					<option value=""></option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>
+			<div class="testquestionrow">
+				<button class="rtestquestionbuttons" id="rtestquestionbutton54">54.</button>
+				<select id="rtestquestionanswer54">
+					<option value=""></option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>
+			<div class="testquestionrow">
+				<button class="rtestquestionbuttons" id="rtestquestionbutton55">55.</button>
+				<select id="rtestquestionanswer55">
+					<option value=""></option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>
+			<div class="testquestionrow">
+				<button class="rtestquestionbuttons" id="rtestquestionbutton56">56.</button>
+				<select id="rtestquestionanswer56">
+					<option value=""></option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>
+			<div class="testquestionrow">
+				<button class="rtestquestionbuttons" id="rtestquestionbutton57">57.</button>
+				<select id="rtestquestionanswer57">
+					<option value=""></option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>
+			<div class="testquestionrow">
+				<button class="rtestquestionbuttons" id="rtestquestionbutton58">58.</button>
+				<select id="rtestquestionanswer58">
+					<option value=""></option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>
+			<div class="testquestionrow">
+				<button class="rtestquestionbuttons" id="rtestquestionbutton59">59.</button>
+				<select id="rtestquestionanswer59">
+					<option value=""></option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>
+			<div class="testquestionrow">
+				<button class="rtestquestionbuttons" id="rtestquestionbutton60">60.</button>
+				<select id="rtestquestionanswer60">
+					<option value=""></option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>
+
+		</div>
+		</div>
+
+		<button class="studybutton" id="endrtestbutton">
+			End Test
+		</div>
+
+	</div>
+
 </div>
+
+<!--this is the random test mode end section-->
+<div id="rtestend" style="display: none">
+
+    <div class="testcontainers testquestionscontainer">
+        <div class="practiceendbox">
+            <div style="font-size: 2vmax">Stats:</div>
+            <div>Score: <span id="rtestscore"></span></div>
+            <div>Correct Answers: <span id="questionscorrectrtest"></span></div>
+            <div>Questions Attempted: <span id="questionsattemptedrtest"></span></div>
+            <div>Accuracy: <span id="accuracyrtest"></span></div>
+        </div>
+    </div>
+
+    <div class="testcontainers testanswerscontainer">
+
+        <div class ="bigtitle">
+            Answer Key:
+        </div>
+
+        <div class="testquestioncolumncontainer">
+        <div class="testquestioncolumn">
+
+            <div class="testquestionrow">
+                <button class="rtestanswerbuttons" id="rtestanswerbutton1">1.</button>
+                <span id="rtestanswer1"></span>
+            </div>
+
+            <div class="testquestionrow">
+                <button class="rtestanswerbuttons" id="rtestanswerbutton2">2.</button>
+                <span id="rtestanswer2"></span>
+            </div>
+
+            <div class="testquestionrow">
+                <button class="rtestanswerbuttons" id="rtestanswerbutton3">3.</button>
+                <span id="rtestanswer3"></span>
+            </div>
+
+            <div class="testquestionrow">
+                <button class="rtestanswerbuttons" id="rtestanswerbutton4">4.</button>
+                <span id="rtestanswer4"></span>
+            </div>
+
+            <div class="testquestionrow">
+                <button class="rtestanswerbuttons" id="rtestanswerbutton5">5.</button>
+                <span id="rtestanswer5"></span>
+            </div>
+
+            <div class="testquestionrow">
+                <button class="rtestanswerbuttons" id="rtestanswerbutton6">6.</button>
+                <span id="rtestanswer6"></span>
+            </div>
+
+            <div class="testquestionrow">
+                <button class="rtestanswerbuttons" id="rtestanswerbutton7">7.</button>
+                <span id="rtestanswer7"></span>
+            </div>
+
+            <div class="testquestionrow">
+                <button class="rtestanswerbuttons" id="rtestanswerbutton8">8.</button>
+                <span id="rtestanswer8"></span>
+            </div>
+
+            <div class="testquestionrow">
+                <button class="rtestanswerbuttons" id="rtestanswerbutton9">9.</button>
+                <span id="rtestanswer9"></span>
+            </div>
+
+            <div class="testquestionrow">
+                <button class="rtestanswerbuttons" id="rtestanswerbutton10">10.</button>
+                <span id="rtestanswer10"></span>
+            </div>
+
+            <div class="testquestionrow">
+                <button class="rtestanswerbuttons" id="rtestanswerbutton11">11.</button>
+                <span id="rtestanswer11"></span>
+            </div>
+
+            <div class="testquestionrow">
+                <button class="rtestanswerbuttons" id="rtestanswerbutton12">12.</button>
+                <span id="rtestanswer12"></span>
+            </div>
+
+            <div class="testquestionrow">
+                <button class="rtestanswerbuttons" id="rtestanswerbutton13">13.</button>
+                <span id="rtestanswer13"></span>
+            </div>
+
+            <div class="testquestionrow">
+                <button class="rtestanswerbuttons" id="rtestanswerbutton14">14.</button>
+                <span id="rtestanswer14"></span>
+            </div>
+
+            <div class="testquestionrow">
+                <button class="rtestanswerbuttons" id="rtestanswerbutton15">15.</button>
+                <span id="rtestanswer15"></span>
+            </div>
+
+            <div class="testquestionrow">
+                <button class="rtestanswerbuttons" id="rtestanswerbutton16">16.</button>
+                <span id="rtestanswer16"></span>
+            </div>
+
+            <div class="testquestionrow">
+                <button class="rtestanswerbuttons" id="rtestanswerbutton17">17.</button>
+                <span id="rtestanswer17"></span>
+            </div>
+
+            <div class="testquestionrow">
+                <button class="rtestanswerbuttons" id="rtestanswerbutton18">18.</button>
+                <span id="rtestanswer18"></span>
+            </div>
+
+            <div class="testquestionrow">
+                <button class="rtestanswerbuttons" id="rtestanswerbutton19">19.</button>
+                <span id="rtestanswer19"></span>
+            </div>
+
+            <div class="testquestionrow">
+                <button class="rtestanswerbuttons" id="rtestanswerbutton20">20.</button>
+                <span id="rtestanswer20"></span>
+            </div>
+
+        </div>
+
+        <div class="testquestioncolumn">
+            
+            <div class="testquestionrow">
+                <button class="rtestanswerbuttons" id="rtestanswerbutton21">21.</button>
+                <span id="rtestanswer21"></span>
+            </div>
+
+            <div class="testquestionrow">
+                <button class="rtestanswerbuttons" id="rtestanswerbutton22">22.</button>
+                <span id="rtestanswer22"></span>
+            </div>
+
+            <div class="testquestionrow">
+                <button class="rtestanswerbuttons" id="rtestanswerbutton23">23.</button>
+                <span id="rtestanswer23"></span>
+            </div>
+
+            <div class="testquestionrow">
+                <button class="rtestanswerbuttons" id="rtestanswerbutton24">24.</button>
+                <span id="rtestanswer24"></span>
+            </div>
+
+            <div class="testquestionrow">
+                <button class="rtestanswerbuttons" id="rtestanswerbutton25">25.</button>
+                <span id="rtestanswer25"></span>
+            </div>
+
+            <div class="testquestionrow">
+                <button class="rtestanswerbuttons" id="rtestanswerbutton26">26.</button>
+                <span id="rtestanswer26"></span>
+            </div>
+
+            <div class="testquestionrow">
+                <button class="rtestanswerbuttons" id="rtestanswerbutton27">27.</button>
+                <span id="rtestanswer27"></span>
+            </div>
+
+            <div class="testquestionrow">
+                <button class="rtestanswerbuttons" id="rtestanswerbutton28">28.</button>
+                <span id="rtestanswer28"></span>
+            </div>
+
+            <div class="testquestionrow">
+                <button class="rtestanswerbuttons" id="rtestanswerbutton29">29.</button>
+                <span id="rtestanswer29"></span>
+            </div>
+
+            <div class="testquestionrow">
+                <button class="rtestanswerbuttons" id="rtestanswerbutton30">30.</button>
+                <span id="rtestanswer30"></span>
+            </div>
+
+            <div class="testquestionrow">
+                <button class="rtestanswerbuttons" id="rtestanswerbutton31">31.</button>
+                <span id="rtestanswer31"></span>
+            </div>
+
+            <div class="testquestionrow">
+                <button class="rtestanswerbuttons" id="rtestanswerbutton32">32.</button>
+                <span id="rtestanswer32"></span>
+            </div>
+
+            <div class="testquestionrow">
+                <button class="rtestanswerbuttons" id="rtestanswerbutton33">33.</button>
+                <span id="rtestanswer33"></span>
+            </div>
+
+            <div class="testquestionrow">
+                <button class="rtestanswerbuttons" id="rtestanswerbutton34">34.</button>
+                <span id="rtestanswer34"></span>
+            </div>
+
+            <div class="testquestionrow">
+                <button class="rtestanswerbuttons" id="rtestanswerbutton35">35.</button>
+                <span id="rtestanswer35"></span>
+            </div>
+
+            <div class="testquestionrow">
+                <button class="rtestanswerbuttons" id="rtestanswerbutton36">36.</button>
+                <span id="rtestanswer36"></span>
+            </div>
+
+            <div class="testquestionrow">
+                <button class="rtestanswerbuttons" id="rtestanswerbutton37">37.</button>
+                <span id="rtestanswer37"></span>
+            </div>
+
+            <div class="testquestionrow">
+                <button class="rtestanswerbuttons" id="rtestanswerbutton38">38.</button>
+                <span id="rtestanswer38"></span>
+            </div>
+
+            <div class="testquestionrow">
+                <button class="rtestanswerbuttons" id="rtestanswerbutton39">39.</button>
+                <span id="rtestanswer39"></span>
+            </div>
+
+            <div class="testquestionrow">
+                <button class="rtestanswerbuttons" id="rtestanswerbutton40">40.</button>
+                <span id="rtestanswer40"></span>
+            </div>
+            
+        </div>
+
+        <div class="testquestioncolumn">
+
+            <div class="testquestionrow">
+                <button class="rtestanswerbuttons" id="rtestanswerbutton41">41.</button>
+                <span id="rtestanswer41"></span>
+            </div>
+
+            <div class="testquestionrow">
+                <button class="rtestanswerbuttons" id="rtestanswerbutton42">42.</button>
+                <span id="rtestanswer42"></span>
+            </div>
+
+            <div class="testquestionrow">
+                <button class="rtestanswerbuttons" id="rtestanswerbutton43">43.</button>
+                <span id="rtestanswer43"></span>
+            </div>
+
+            <div class="testquestionrow">
+                <button class="rtestanswerbuttons" id="rtestanswerbutton44">44.</button>
+                <span id="rtestanswer44"></span>
+            </div>
+
+            <div class="testquestionrow">
+                <button class="rtestanswerbuttons" id="rtestanswerbutton45">45.</button>
+                <span id="rtestanswer45"></span>
+            </div>
+
+            <div class="testquestionrow">
+                <button class="rtestanswerbuttons" id="rtestanswerbutton46">46.</button>
+                <span id="rtestanswer46"></span>
+            </div>
+
+            <div class="testquestionrow">
+                <button class="rtestanswerbuttons" id="rtestanswerbutton47">47.</button>
+                <span id="rtestanswer47"></span>
+            </div>
+
+            <div class="testquestionrow">
+                <button class="rtestanswerbuttons" id="rtestanswerbutton48">48.</button>
+                <span id="rtestanswer48"></span>
+            </div>
+
+            <div class="testquestionrow">
+                <button class="rtestanswerbuttons" id="rtestanswerbutton49">49.</button>
+                <span id="rtestanswer49"></span>
+            </div>
+
+            <div class="testquestionrow">
+                <button class="rtestanswerbuttons" id="rtestanswerbutton50">50.</button>
+                <span id="rtestanswer50"></span>
+            </div>
+
+            <div class="testquestionrow">
+                <button class="rtestanswerbuttons" id="rtestanswerbutton51">51.</button>
+                <span id="rtestanswer51"></span>
+            </div>
+
+            <div class="testquestionrow">
+                <button class="rtestanswerbuttons" id="rtestanswerbutton52">52.</button>
+                <span id="rtestanswer52"></span>
+            </div>
+
+            <div class="testquestionrow">
+                <button class="rtestanswerbuttons" id="rtestanswerbutton53">53.</button>
+                <span id="rtestanswer53"></span>
+            </div>
+
+            <div class="testquestionrow">
+                <button class="rtestanswerbuttons" id="rtestanswerbutton54">54.</button>
+                <span id="rtestanswer54"></span>
+            </div>
+
+            <div class="testquestionrow">
+                <button class="rtestanswerbuttons" id="rtestanswerbutton55">55.</button>
+                <span id="rtestanswer55"></span>
+            </div>
+
+            <div class="testquestionrow">
+                <button class="rtestanswerbuttons" id="rtestanswerbutton56">56.</button>
+                <span id="rtestanswer56"></span>
+            </div>
+
+            <div class="testquestionrow">
+                <button class="rtestanswerbuttons" id="rtestanswerbutton57">57.</button>
+                <span id="rtestanswer57"></span>
+            </div>
+
+            <div class="testquestionrow">
+                <button class="rtestanswerbuttons" id="rtestanswerbutton58">58.</button>
+                <span id="rtestanswer58"></span>
+            </div>
+
+            <div class="testquestionrow">
+                <button class="rtestanswerbuttons" id="rtestanswerbutton59">59.</button>
+                <span id="rtestanswer59"></span>
+            </div>
+
+            <div class="testquestionrow">
+                <button class="rtestanswerbuttons" id="rtestanswerbutton60">60.</button>
+                <span id="rtestanswer60"></span>
+            </div>
+
+        </div>
+        </div>
+
+    </div>
+
+</div>
+
+<!--this is the image display page for the random test answer page-->
+<div id="rtestendimage" style="display: none">
+
+	<img class="questionboxpractice" id="questionboxrtestresults" src="">
+
+	<div class="testresultsimageanswersbox">
+
+		<div class="testresultsimageanswers">
+			<div>
+			Your Answer: <span id="youranswerrtestimage"></span>
+			</div>
+		</div>
+
+		<div class="testresultsimageanswers">
+			<div>
+			Correct Answer: <span id="correctanswerrtestimage"></span>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="studybuttoncontainer">
+		<button class="studybutton" id="rtestendimagebutton">Back</button>
+	</div>
 
 </div>
 
@@ -1955,8 +3090,13 @@
 	let questiontype, difficulty, year, mode, pkey, questionnum, imgpath, time, totaltime, accuracy, imgpathcheck, answervalue, currentquestion, interval;
 	let questionstotal = 0
 	let questionscorrect = 0
+	let timerstatus = 1
 	let score = 0
+	//time after first timer update, set starting time in html
+	let	testtimer1 = 39
+	let	testtimer2 = 59
 	const numlist = [];
+	const questionlist = [];
 	var answerkey = {};
 	fetch("answers.json")
 	.then(response => response.json())
@@ -1994,40 +3134,120 @@
 		
 	//this function and randomQuestion give a question that is not repeated
 	function numList() {
-	for (let i = 0; i < Number(maxnum[pkey]); i++) {
-	var j = i + 1
-	numlist[i] = j.toString();
+		for (let i = 0; i < Number(maxnum[pkey]); i++) {
+		var j = i + 1
+		numlist[i] = j.toString();
 	}}
 
 	function randomQuestion() {
-	var numtemp = Math.floor(Math.random() * Number(maxnum[pkey]));
-	questionnum = numlist[numtemp];
-	numlist.splice(numtemp, 1);
-	var maxnumnew = Number(maxnum[pkey])-1
-	maxnum[pkey] = maxnumnew.toString()
+		var numtemp = Math.floor(Math.random() * Number(maxnum[pkey]));
+		questionnum = numlist[numtemp];
+		numlist.splice(numtemp, 1);
+		var maxnumnew = Number(maxnum[pkey])-1
+		maxnum[pkey] = maxnumnew.toString()
 	}
+
+	//this function creates a list of random questions for rtest mode
+	function questionListMaker() {
+		pkey = difficulty + "algebra";
+		numList();
+		for (let i = 1; i < 22; i++) {
+			randomQuestion();
+			imgpath = "questions/practice/" + difficulty + "/" + "algebra" + "/" + questionnum + ".png";
+			questionlist[i] = imgpath
+		}
+		pkey = difficulty + "geometry";
+		numlist.length = 0;
+		numList();
+		for (let i = 22; i < 40; i++) {
+			randomQuestion();
+			imgpath = "questions/practice/" + difficulty + "/" + "geometry" + "/" + questionnum + ".png";
+			questionlist[i] = imgpath
+		}
+		pkey = difficulty + "calculus";
+		numlist.length = 0;
+		numList();
+		for (let i = 40; i < 52; i++) {
+			randomQuestion();
+			imgpath = "questions/practice/" + difficulty + "/" + "calculus" + "/" + questionnum + ".png";
+			questionlist[i] = imgpath
+		}
+		pkey = difficulty + "statistics";
+		numlist.length = 0;
+		numList();
+		for (let i = 52; i < 61; i++) {
+			randomQuestion();
+			imgpath = "questions/practice/" + difficulty + "/" + "statistics" + "/" + questionnum + ".png";
+			questionlist[i] = imgpath
+		}
+	}
+
 
 	//this function creates a timer
 	function testtimer() {
-		//time after first update, set starting time in html
-		testtimer1 = 39
-		testtimer2 = 59
 		interval = setInterval(function() {
-			document.getElementById("testtimer1").textContent = String(testtimer1).padStart(2,"0");
-			document.getElementById("testtimer2").textContent = String(testtimer2).padStart(2,"0");
-			if (testtimer1 == 0 && testtimer2 == 0) {
-				clearInterval(interval);
-				setTimeout(function() {
-				testEnd();
-				},1000)
-			}
-			testtimer2 -=1
-			if (testtimer2 == -1) {
-				testtimer2 = 59;
-				testtimer1 -=1;
+			if (timerstatus == 1) {
+				document.getElementById("testtimer1").textContent = String(testtimer1).padStart(2,"0");
+				document.getElementById("testtimer2").textContent = String(testtimer2).padStart(2,"0");
+				if (testtimer1 == 0 && testtimer2 == 0) {
+					clearInterval(interval);
+					setTimeout(function() {
+					testEnd();
+					},1000)
+				}
+				testtimer2 -=1
+				if (testtimer2 == -1) {
+					testtimer2 = 59;
+					testtimer1 -=1;
+				}
 			}
 		},1000)
 	}
+
+	function rtesttimer() {
+		interval = setInterval(function() {
+			if (timerstatus == 1) {
+				document.getElementById("rtesttimer1").textContent = String(testtimer1).padStart(2,"0");
+				document.getElementById("rtesttimer2").textContent = String(testtimer2).padStart(2,"0");
+				if (testtimer1 == 0 && testtimer2 == 0) {
+					clearInterval(interval);
+					setTimeout(function() {
+					rtestEnd();
+					},1000)
+				}
+				testtimer2 -=1
+				if (testtimer2 == -1) {
+					testtimer2 = 59;
+					testtimer1 -=1;
+				}
+			}
+		},1000)
+	}
+
+	//timer pause functions
+	function testTimerPausePlay() {
+	if (timerstatus == 1) {
+		timerstatus = 0;
+		document.getElementById("testpausebutton").src = "assets/images/playbutton.png"
+	} else {
+		timerstatus = 1;
+		document.getElementById("testpausebutton").src = "assets/images/pausebutton.png"
+	}
+	}
+	document.getElementById("testpausebutton").addEventListener("click", testTimerPausePlay);
+
+
+	function rtestTimerPausePlay() {
+	if (timerstatus == 1) {
+		timerstatus = 0;
+		document.getElementById("rtestpausebutton").src = "assets/images/playbutton.png"
+	} else {
+		timerstatus = 1;
+		document.getElementById("rtestpausebutton").src = "assets/images/pausebutton.png"
+	}
+	}
+	document.getElementById("rtestpausebutton").addEventListener("click", rtestTimerPausePlay);
+
 
 	//practice mode start button code
 	function startPractice() {
@@ -2063,7 +3283,7 @@
 	function startTest() {
 		difficulty = document.querySelector('input[name="difficultyt"]:checked')?.value;
 		year = document.querySelector('input[name="yeart"]:checked')?.value;
-		currentquestion = "1"
+		currentquestion = "1";
 		
 		if (!difficulty || !year) {
 			document.getElementById("settingsalertbox").style.display = "flex";
@@ -2098,7 +3318,9 @@
 
 	//random test mode start button code
 	function startRTest() {
-		var difficulty = document.querySelector('input[name="difficultyr"]:checked')?.value;
+		difficulty = document.querySelector('input[name="difficultyr"]:checked')?.value;
+		window.questionListMaker()
+		currentquestion = "1";
 		
 		if (!difficulty) {
 			document.getElementById("settingsalertbox").style.display = "flex";
@@ -2108,6 +3330,27 @@
 		} else {
 		document.getElementById("rtestsettings").style.display = "none";
 		document.getElementById("rtestpage").style.display = "block";
+		document.getElementById("currentquestionrtest").textContent = currentquestion;
+		imgpath = questionlist[currentquestion];
+		document.getElementById("rtestquestion").src = imgpath;
+		const buttons = document.querySelectorAll(".rtestquestionbuttons");
+		buttons.forEach(function(button) {
+			button.addEventListener("click", function(e) {
+				currentquestion = e.target.id.replace("rtestquestionbutton","");
+				imgpath = questionlist[currentquestion];
+				document.getElementById("currentquestionrtest").textContent = currentquestion;
+				document.getElementById("rtestquestion").src = imgpath;
+			})
+		})
+		document.addEventListener("keydown", function(e) {
+			if (e.key === "ArrowLeft") {
+				rtestBack();
+			}
+			if (e.key === "ArrowRight") {
+				rtestNext();
+			}
+		})
+		rtesttimer()
 		}
 	}
 	document.getElementById("startbuttonr").addEventListener("click", startRTest);
@@ -2277,10 +3520,83 @@
 	document.getElementById("endtestbutton").addEventListener("click", testEnd);
 	document.getElementById("testendimagebutton").addEventListener("click", testEndImage2testEnd);
 
+	//random test mode functions below
+		function rtestNext () {
+		if (Number(currentquestion) < 60 && document.getElementById("rtestpage").style.display === "block") {
+			num = Number(currentquestion);
+			num += 1;
+			currentquestion = num.toString();
+			imgpath = questionlist[currentquestion];
+			document.getElementById("currentquestionrtest").textContent = currentquestion;
+			document.getElementById("rtestquestion").src = imgpath;
+		}
+	}
 
+	function rtestBack () {
+		if (Number(currentquestion) > 1 && document.getElementById("rtestpage").style.display === "block") {
+			num = Number(currentquestion);
+			num -= 1;
+			currentquestion = num.toString();
+			imgpath = questionlist[currentquestion];
+			document.getElementById("currentquestionrtest").textContent = currentquestion;
+			document.getElementById("rtestquestion").src = imgpath;
+		}
+	}
 
+	function rtestEnd() {
+		clearInterval(interval);
+		document.getElementById("rtestpage").style.display = "none";
+		document.getElementById("rtestend").style.display = "block";
+		for (i=1; i<61; i++) {
+			answer = document.querySelector('select[id="rtestquestionanswer'+ i.toString() +'"]').value;
+			imgpath = questionlist[i];
+			correctanswer = answerkey[imgpath];
+			document.getElementById("rtestanswer"+i.toString()).textContent = correctanswer;
+			if (!answer) {
+				document.getElementById("rtestanswerbutton"+i.toString()).style.color = "black"
+			} else if (answer === correctanswer) {
+				score += 6
+				questionstotal += 1
+				questionscorrect += 1
+				document.getElementById("rtestanswerbutton"+i.toString()).style.color = "green"
+			} else {
+				score -= 2
+				questionstotal += 1
+				document.getElementById("rtestanswerbutton"+i.toString()).style.color = "red"
+			}
+		}
+		document.getElementById("rtestscore").textContent = score
+		document.getElementById("accuracyrtest").textContent = Math.round(questionscorrect / questionstotal * 1000) / 10 + "%";
+		document.getElementById("questionsattemptedrtest").textContent = questionstotal;
+		document.getElementById("questionscorrectrtest").textContent = questionscorrect;
 
+		const buttons = document.querySelectorAll(".rtestanswerbuttons");
+		buttons.forEach(function(button) {
+			button.addEventListener("click", function(e) {
+				currentquestion = e.target.id.replace("rtestanswerbutton","");
+				answer = document.querySelector('select[id="rtestquestionanswer'+ currentquestion.toString() +'"]').value;
+				imgpath = questionlist[currentquestion];
+				document.getElementById("questionboxrtestresults").src = imgpath;
+				document.getElementById("youranswerrtestimage").textContent = answer
+				if (!answer) {
+					document.getElementById("youranswerrtestimage").textContent = "None"
+				}
+				document.getElementById("correctanswerrtestimage").textContent = answerkey[imgpath]
+				document.getElementById("rtestend").style.display = "none";
+				document.getElementById("rtestendimage").style.display = "block";
+			})
+		})
+	}
 
+	function rtestEndImage2testEnd() {
+		document.getElementById("rtestendimage").style.display = "none";
+		document.getElementById("rtestend").style.display = "block";
+	}
+
+	document.getElementById("rtnext").addEventListener("click", rtestNext);
+	document.getElementById("rtback").addEventListener("click", rtestBack);
+	document.getElementById("endrtestbutton").addEventListener("click", rtestEnd);
+	document.getElementById("rtestendimagebutton").addEventListener("click", rtestEndImage2testEnd);
 
 </script>
 
