@@ -1,0 +1,551 @@
+
+	html, body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	background-image: linear-gradient(to bottom, #e6e6ff, #fff8f8, #fff8f8);
+	}
+
+	.titlebanner {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	color: white;
+	font-family: "Tahoma";
+	font-weight: bold;
+	font-size: 1.7vmax;
+	width: 100vw;
+	height: 8vh;
+	background-color: #003559;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	line-height: 1;
+	}
+
+	.bannerbuttons {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: white;
+	background-color: inherit;
+	border: none;
+	font-family: "Tahoma";
+	font-weight: bold;
+	font-size: 1vmax;
+	cursor: pointer;
+	width: 15vw;
+	height: 100%;
+	line-height: 1;
+	}
+
+	.bigtitle {
+	color: black;
+	font-family: "Tahoma";
+	text-align: center;
+	font-weight: bold;
+	font-size: 1.7vmax;
+	line-height: 1;
+	}
+
+	.mainmenutitle {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 50vw;
+	height: 22.7vh;
+	top: 8vh;
+	line-height: 22.7vh;
+	z-index: 3;
+	}
+
+	.settingstitle {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 50vw;
+	height: 22.7vh;
+	top: 6.8vh;
+	line-height: 22.7vh;
+	z-index: 3;
+	}
+
+	.mainmenubuttons {
+	width: 20vw;
+	height: 7.2vh;
+	color: white;
+	font-family: "Tahoma";
+	text-align: center;
+	font-weight: bold;
+	font-size: 1.4vmax;
+	line-height: 6vh;
+	background-color: #ea3031;
+	border: .6vh solid #000000;
+	border-radius: 1vh;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	cursor: pointer;
+	}
+
+	.mainmenubuttons:hover {
+	background-color: #b62526;
+	}
+
+	.practicebutton {
+	top: 30.7vh;	
+	}
+
+	.testbutton {
+	top: 50.7vh;	
+	}
+
+	.rtestbutton {
+	top: 70.7vh;	
+	}
+
+
+	.bigsettingsbox {
+	display: flex;
+	width: 70vw;
+	height: 50vh;
+	position: absolute;
+	top: 28.6vh;
+	left: 50%;
+	transform: translateX(-50%);
+	border: 4px solid #000000;
+	border-radius: 1vh;
+	}
+
+	.settings-titles {
+	color: black;
+	font-weight: bold;
+	font-size: 1.3vmax;
+	font-family: "Tahoma";
+	text-align: center;
+	width: 90%;
+	position: absolute;
+	top: 5%;
+	left: 50%;
+	transform: translateX(-50%);
+	}
+
+	.settings-main-title {
+	top: 11.2%
+	}
+
+	.settings-boxes {
+	border: 4px solid #000000;
+	position: absolute;
+	border-radius: 1vh;
+	overflow-y: auto;
+	}
+
+	.settings-box1 {
+	width: 40%;
+	height: 40%;
+	align-self: center;
+	left: 26.6%;
+	transform: translateX(-50%);
+	}
+
+	.settings-box2 {
+	width: 40%;
+	height: 40%;
+	align-self: center;
+	right: 26.6%;
+	transform: translateX(50%);
+	}
+
+	.settings-box3 {
+	width: 80.6%;
+	height: 40%;
+	align-self: center;
+	right: 50%;
+	transform: translateX(50%);
+	}
+
+	.settingsradio {
+	color: black;
+	font-weight: bold;
+	font-size: 0.8vmax;
+	font-family: "Tahoma";
+	position: absolute;
+	top: 25%;
+	left: 5%;
+	}
+
+	.startbutton {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	bottom: 10.2%;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 10vw;
+	height: 4.4vh;
+	color: #FFFFFF;
+	font-weight: bold;
+	font-size: 1.3vmax;
+	font-family: "Tahoma";
+	background-color: #ea3031;
+	border: 4px solid #000000;
+	border-radius: 1vh;
+	cursor: pointer;
+	}
+
+	.startbutton:hover {
+	background-color: #b62526;
+	}
+
+	.endtestbutton {
+	bottom: auto;
+	left: auto;
+	transform: translateX(0%)
+	}
+
+	.studybuttoncontainer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10vw;
+	position: absolute;
+	bottom: 10.2%;
+	width: 100%;
+	height: 4.4vh;
+	}
+
+	.studybutton {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 10vw;
+	height: 4.4vh;
+	color: #FFFFFF;
+	font-weight: bold;
+	font-size: 1.3vmax;
+	font-family: "Tahoma";
+	background-color: #ea3031;
+	border: 4px solid #000000;
+	border-radius: 1vh;
+	cursor: pointer;
+	}
+	
+	.studybutton:hover {
+	background-color: #b62526;
+	}
+
+	.submitbutton {
+	bottom: 22%;
+	font-size: 1vmax;
+	width: 6vw;
+	height: 3.3vh;
+	cursor: pointer;
+	}
+
+	.alertbox1 {
+	width: 27%;
+	height: 8%;
+	position: absolute;
+	align-self: center;
+	align-items: center;
+	justify-content: center;
+	left: 50%;
+	background-color: white;
+	transform: translateX(-50%);
+	border: 4px solid #000000;
+	color: red;
+	font-weight: bold;
+	font-size: 0.8vmax;
+	font-family: "Tahoma";
+	text-align: center;
+	z-index: 90;
+	}
+
+	.alertbox2 {
+	width: 30%;
+	height: 20%;
+	position: absolute;
+	align-self: center;
+	align-items: center;
+	justify-content: center;
+	left: 50%;
+	background-color: white;
+	transform: translateX(-50%);
+	border: 4px solid #000000;
+	color: red;
+	font-weight: bold;
+	font-size: 1.3vmax;
+	font-family: "Tahoma";
+	text-align: center;
+	z-index: 90;
+	}
+
+	.alertboxcontainer {
+	display: flex;
+	width: 100vw;
+	height: 100vh;
+	top: 0px;
+	left: 0px;
+	}
+
+	.questionboxpractice {
+	position: absolute;
+	width: 45vw;
+	height: auto;
+	max-height: 50vh;
+	left: 50%;
+	bottom: 35vh;
+	transform: translate(-50%, 0%);
+	outline: 4px solid #000000;
+	}
+
+	.practiceendbox {
+	background-color: white;
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	width: 60%;
+	height: 35%;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	border: 4px solid #000000;
+	border-radius: 1vh;
+	color: #000000;
+	align-items: center;
+	justify-content: center;
+	gap: 2vh;
+	text-align: center;
+	font-weight: bold;
+	font-size: 1.3vmax;
+	font-family: "Tahoma";
+	}
+
+	.answerbox {
+	position: absolute;
+	display: flex;
+	left: 50%;
+	top: 70%;
+	transform: translate(-50%, -50%);
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	font-weight: bold;
+	font-size: 1.3vmax;
+	font-family: "Tahoma";
+	}
+
+	.abcde {
+	color: black;
+	font-weight: bold;
+	font-size: 0.8vmax;
+	font-family: "Tahoma";
+	display: flex;
+	gap: 1.5vw;
+	align-items: center;
+	transform: scale(1.5)
+	}
+	
+	.abcde span {
+	display: flex;
+	gap: .3vw;
+	}
+
+	.testcontainers {
+	position: absolute;
+	height: 84vh;
+	outline: .2vw solid black;
+	}
+
+	.testquestionscontainer {
+	width: 59.9vw;
+	left: 0%;
+	top: 100%;
+	transform: translate(0%, -100%);
+	}
+
+	.testanswerscontainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+	width: 39.9vw;
+	left: 100%;
+	top: 100%;
+	transform: translate(-100%, -100%);
+	}
+
+	.questionboxtest {
+	position: absolute;
+	width: 90%;
+	height: auto;
+	max-height: 70%;
+	left: 50%;
+	top: 40.5%;
+	transform: translate(-50%, -50%);
+	outline: 4px solid #000000;
+	}
+
+	.testquestioncolumn {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	height: 100%;
+	width: 30%;
+	align-self: center;
+	}
+
+	.testquestioncolumncontainer {
+	display: flex;
+	justify-content: space-evenly;
+	width: 100%;
+	height: 85%;
+	overflow-y: auto;
+	}
+
+	.testquestionrow {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	width: 100%;
+	font-weight: bold;
+	font-size: 1.1vmax;
+	font-family: "Tahoma";
+	line-height: 1;
+	}
+
+	.testquestionbuttons {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 1vw;
+	color: #003559;
+	text-decoration: underline;
+	font-weight: bold;
+	font-size: 1.1vmax;
+	font-family: "Tahoma";
+	line-height: 1;
+	cursor: pointer;
+	background: inherit;
+	border: none;
+	}
+
+	.testanswerbuttons {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 1vw;
+	color: #003559;
+	text-decoration: underline;
+	font-weight: bold;
+	font-size: 1.1vmax;
+	font-family: "Tahoma";
+	line-height: 1;
+	cursor: pointer;
+	background: inherit;
+	border: none;
+	}
+
+	.testtimer {
+	display: flex;
+	position: absolute;
+	width: 8vw;
+	height: 6vh;
+	left: 50vw;
+	top: 8.75vh;
+	transform: translateX(-50%);
+	font-weight: bold;
+	font-size: 1.5vmax;
+	font-family: "Tahoma";
+	line-height: 1;
+	justify-content: center;
+	gap: .2vw;
+	align-items: center;
+	border: 4px solid #000000;
+	background-color: white;
+	line-height: 1;
+	box-sizing: border-box;
+	}
+
+	.testtimernumber {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 25%;
+	}
+
+	.testresultsimageanswersbox {
+	position: absolute;
+	display: flex;
+	top: 65vh;
+	left: 50%;
+	transform: translateX(-50%);
+	outline: 4px solid #000000;
+	justify-content: space-evenly;
+	align-items: center;
+	width: 45vw;
+	height: 10vh;
+	background-color: white;
+	}
+
+	.testresultsimageanswers {
+	display: flex;
+	width: 40%;
+	height: 100%;
+	font-weight: bold;
+	font-size: 1vmax;
+	font-family: "Tahoma";
+	line-height: 1;
+	justify-content: center;
+	align-items: center;
+	}
+
+	.pausebutton {
+	position: absolute;
+	width: 6vh;
+	height: 6vh;
+	left: 55vw;
+	top: 8.75vh;
+	cursor: pointer;
+	pointer-events: auto;
+	}
+
+	.currenttestquestion {
+	position: relative;
+	bottom: .3vh;
+	width: 2vw;
+	display: flex;
+	justify-content: center;
+	}
+
+	.gap5vw {
+	gap: 5vw;
+	}
+
+	.fontsize2vmax {
+	font-size: 2vmax;	
+	}
+
+	.fontsizesmaller {
+	font-size: .75em;
+	}
+
+	.none {
+	display: none;	
+	}
+
+	.green {
+	color: green;
+	}
+
+	.red {
+	color: red;
+	}
+
+	.black {
+	color: black;	
+	}
