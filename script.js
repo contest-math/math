@@ -36,6 +36,65 @@
 	document.getElementById("rtestsettings").style.display = "block";
 	})
 
+
+	let abcdestringhtml = '\n\t\t\t\t\t<option value=""></option>\n\t\t\t\t\t<option value="A">A</option>\n\t\t\t\t\t<option value="B">B</option>\n\t\t\t\t\t<option value="C">C</option>\n\t\t\t\t\t<option value="D">D</option>\n\t\t\t\t\t<option value="E">E</option>';
+	//populate the question columns automatically
+	for (let i=1; i<21; i++) {
+		let string = '\n\t\t\t<div class="testquestionrow">';
+		string += '\n\t\t\t\t<button class="testquestionbuttons" id="testquestionbutton' + i.toString() + '">'+ i.toString() +'.</button>';
+		string += '\n\t\t\t\t<select id="testquestionanswer'+ i.toString() + '">';
+		string += abcdestringhtml;
+		string += '\n\t\t\t\t</select>';
+		string += '\n\t\t\t</div>';
+		document.getElementById("questioncolumn1").innerHTML += string;
+	}
+
+	for (let i=21; i<41; i++) {
+		let string = '\n\t\t\t<div class="testquestionrow">';
+		string += '\n\t\t\t\t<button class="testquestionbuttons" id="testquestionbutton' + i.toString() + '">'+ i.toString() +'.</button>';
+		string += '\n\t\t\t\t<select id="testquestionanswer'+ i.toString() + '">';
+		string += abcdestringhtml;
+		string += '\n\t\t\t\t</select>';
+		string += '\n\t\t\t</div>';
+		document.getElementById("questioncolumn2").innerHTML += string;
+	}
+
+	for (let i=41; i<61; i++) {
+		let string = '\n\t\t\t<div class="testquestionrow">';
+		string += '\n\t\t\t\t<button class="testquestionbuttons" id="testquestionbutton' + i.toString() + '">'+ i.toString() +'.</button>';
+		string += '\n\t\t\t\t<select id="testquestionanswer'+ i.toString() + '">';
+		string += abcdestringhtml;
+		string += '\n\t\t\t\t</select>';
+		string += '\n\t\t\t</div>';
+		document.getElementById("questioncolumn3").innerHTML += string;
+	}
+
+	//populate the answer columns automatically
+	for (let i=1; i<21; i++){
+		let string = '\n'
+		string += '\n\t\t\t<div class="testquestionrow">';
+		string += '\n\t\t\t\t<button class="testanswerbuttons" id="testanswerbutton'+ i.toString()+'">'+ i.toString() + '.</button>';
+		string += '\n\t\t\t\t<span id="testanswer'+i.toString()+'"></span>';
+		string += '\n\t\t\t</div>';
+		document.getElementById("answercolumn1").innerHTML += string;
+	}
+	for (let i=21; i<41; i++){
+		let string = '\n'
+		string += '\n\t\t\t<div class="testquestionrow">';
+		string += '\n\t\t\t\t<button class="testanswerbuttons" id="testanswerbutton'+ i.toString()+'">'+ i.toString() + '.</button>';
+		string += '\n\t\t\t\t<span id="testanswer'+i.toString()+'"></span>';
+		string += '\n\t\t\t</div>';
+		document.getElementById("answercolumn2").innerHTML += string;
+	}
+	for (let i=41; i<61; i++){
+		let string = '\n'
+		string += '\n\t\t\t<div class="testquestionrow">';
+		string += '\n\t\t\t\t<button class="testanswerbuttons" id="testanswerbutton'+ i.toString()+'">'+ i.toString() + '.</button>';
+		string += '\n\t\t\t\t<span id="testanswer'+i.toString()+'"></span>';
+		string += '\n\t\t\t</div>';
+		document.getElementById("answercolumn3").innerHTML += string;
+	}
+
 	//this is setup for the different modes
 	let questiontype, difficulty, year, mode, pkey, questionnum, imgpath, time, totaltime, accuracy, imgpathcheck, answervalue, currentquestion, interval, alertboxcondition;
 	let questionstotal = 0
@@ -229,9 +288,6 @@
 			document.getElementById("settingsalertbox").style.display = "none"
 			}, 3000);
 		} else {
-		document.getElementById("testsettings").style.display = "none";
-		document.getElementById("rtestsettings").style.display = "none";
-		document.getElementById("testpage").style.display = "block";
 		imgpath = questionlist[currentquestion];
 		document.getElementById("currenttestquestion").textContent = "(" + currentquestion + ".)";
 		document.getElementById("testquestion").src = imgpath;
@@ -252,6 +308,9 @@
 				testNext();
 			}
 		})
+		document.getElementById("testsettings").style.display = "none";
+		document.getElementById("rtestsettings").style.display = "none";
+		document.getElementById("testpage").style.display = "block";
 		}
 		testtimer()
 	}
