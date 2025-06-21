@@ -155,7 +155,7 @@
 	if (currentpage === "practicepage"){
 		abouttime = Date.now();
 	}
-	studylog = localStorage?.getItem("studylog");
+	let studylog = localStorage?.getItem("studylog");
 	if (studylog) {
 		document.getElementById("logbox").textContent = studylog;
 	} else {
@@ -166,6 +166,7 @@
 
 	//study log back button code
 	document.getElementById("studylogback").addEventListener("click", function () {
+	document.getElementById("logbox").style.textAlign = "left";
 	document.getElementById("studylog").style.display = "none";
 	document.getElementById(currentpage).style.display = "block";
 	if (abouttime) {
