@@ -1,42 +1,3 @@
-
-	//to main menu button code
-	document.getElementById("mainmenubutton").addEventListener("click", function () {
-	location.reload()
-	})
-
-	//about this site button code
-	document.getElementById("aboutbutton").addEventListener("click", function () {
-	document.getElementById("mainmenu").style.display = "none";
-	document.getElementById("testsettings").style.display = "none";
-	document.getElementById("practicesettings").style.display = "none";
-	document.getElementById("rtestsettings").style.display = "none";
-	document.getElementById("practicepage").style.display = "none";
-	document.getElementById("testpage").style.display = "none";
-	document.getElementById("testend").style.display = "none";
-	document.getElementById("testendimage").style.display = "none";
-	document.getElementById("practiceend").style.display = "none";
-	document.getElementById("aboutthissite").style.display = "block";
-	})
-
-	//practice mode button code
-	document.getElementById("practicebutton").addEventListener("click", function () {
-	document.getElementById("mainmenu").style.display = "none";
-	document.getElementById("practicesettings").style.display = "block";
-	})
-
-	//test mode button code
-	document.getElementById("testbutton").addEventListener("click", function () {
-	document.getElementById("mainmenu").style.display = "none";
-	document.getElementById("testsettings").style.display = "block";
-	})
-
-	//randomized test mode button code
-	document.getElementById("rtestbutton").addEventListener("click", function () {
-	document.getElementById("mainmenu").style.display = "none";
-	document.getElementById("rtestsettings").style.display = "block";
-	})
-
-
 	let abcdestringhtml = '\n\t\t\t\t\t<option value=""></option>\n\t\t\t\t\t<option value="A">A</option>\n\t\t\t\t\t<option value="B">B</option>\n\t\t\t\t\t<option value="C">C</option>\n\t\t\t\t\t<option value="D">D</option>\n\t\t\t\t\t<option value="E">E</option>';
 	//populate the question columns automatically
 	for (let i=1; i<21; i++) {
@@ -96,11 +57,12 @@
 	}
 
 	//this is setup for the different modes
-	let questiontype, difficulty, year, mode, pkey, questionnum, imgpath, time, totaltime, accuracy, imgpathcheck, answervalue, currentquestion, interval, alertboxcondition;
+	let questiontype, difficulty, year, mode, pkey, questionnum, imgpath, time, totaltime, accuracy, imgpathcheck, answervalue, currentquestion, interval, alertboxcondition, abouttime, timeelapsedstring, accuracystring, datetime, newlog;
 	let questionstotal = 0
 	let questionscorrect = 0
 	let score = 0
 	let timerstatus = 1
+	let currentpage = "mainmenu"
 	const numlist = [];
 	const questionlist = [];
 	var answerkey = {};
@@ -137,6 +99,102 @@
 	anyteststatistics: "180",
 	anytestanyquestions: "1200",
 	}
+
+	const categoryname = {
+	invitationals: "Invitationals",
+	district: "District",
+	regional: "Regional",
+	state: "State",
+	anytest: "Any Test",
+	algebra: "Algebra",
+	geometry: "Geometry",
+	statistics: "Statistics",
+	calculus: "Calculus",
+	anyquestions: "Any Questions",
+	"invitational a": "Invitational A",
+	"invitational b": "Invitational B"
+	}
+
+	//to main menu button code
+	document.getElementById("mainmenubutton").addEventListener("click", function () {
+	location.reload();
+	})
+
+	//about this site button code
+	document.getElementById("aboutbutton").addEventListener("click", function () {
+	document.getElementById(currentpage).style.display = "none";
+	document.getElementById("studylog").style.display = "none";
+	document.getElementById("aboutthissite").style.display = "block";
+	if (currentpage === "testpage" && timerstatus == 1) {
+		window.testTimerPausePlay();
+	}
+	if (currentpage === "practicepage"){
+		abouttime = Date.now();
+	}
+	})
+
+	//about this site back button code
+	document.getElementById("aboutthissiteback").addEventListener("click", function () {
+	document.getElementById("aboutthissite").style.display = "none";
+	document.getElementById(currentpage).style.display = "block";
+	if (abouttime) {
+		abouttime = Date.now() - abouttime;
+		time += abouttime;
+		totaltime += abouttime;
+	}
+	})
+
+	//study log button code
+	document.getElementById("logbutton").addEventListener("click", function () {
+	document.getElementById(currentpage).style.display = "none";
+	document.getElementById("aboutthissite").style.display = "none";
+	document.getElementById("studylog").style.display = "block";
+	if (currentpage === "testpage" && timerstatus == 1) {
+		window.testTimerPausePlay();
+	}
+	if (currentpage === "practicepage"){
+		abouttime = Date.now();
+	}
+	studylog = localStorage?.getItem("studylog");
+	if (studylog) {
+		document.getElementById("logbox").textContent = studylog;
+	} else {
+		document.getElementById("logbox").style.textAlign = "center";
+		document.getElementById("logbox").textContent = "Nothing here yet.";
+	}
+	})
+
+	//study log back button code
+	document.getElementById("studylogback").addEventListener("click", function () {
+	document.getElementById("studylog").style.display = "none";
+	document.getElementById(currentpage).style.display = "block";
+	if (abouttime) {
+		abouttime = Date.now() - abouttime;
+		time += abouttime;
+		totaltime += abouttime;
+	}
+	})
+
+	//practice mode button code
+	document.getElementById("practicebutton").addEventListener("click", function () {
+	document.getElementById("mainmenu").style.display = "none";
+	document.getElementById("practicesettings").style.display = "block";
+	currentpage = "practicesettings";
+	})
+
+	//test mode button code
+	document.getElementById("testbutton").addEventListener("click", function () {
+	document.getElementById("mainmenu").style.display = "none";
+	document.getElementById("testsettings").style.display = "block";
+	currentpage = "testsettings";
+	})
+
+	//randomized test mode button code
+	document.getElementById("rtestbutton").addEventListener("click", function () {
+	document.getElementById("mainmenu").style.display = "none";
+	document.getElementById("rtestsettings").style.display = "block";
+	currentpage = "rtestsettings";
+	})
 		
 	//this function and randomQuestion give a question that is not repeated
 	function numList() {
@@ -233,11 +291,48 @@
 	}
 	document.getElementById("testpausebutton").addEventListener("click", testTimerPausePlay);
 
+	//this function builds the the log for the current session
+	function logBuilder() {
+		const date = new Date(datetime)
+		const datestring = date.toLocaleDateString("default", {month: "long", day: "numeric", year: "numeric"}) + " " + date.toLocaleTimeString("default", {hour: "numeric", minute: "numeric"})
+		let modeadd
+		if (mode === "Practice") {
+			modeadd = "(" + categoryname[difficulty] + ", " + categoryname[questiontype] + ")";
+		} else if (mode === "Test") {
+			modeadd = "(" + categoryname[difficulty] + ", " + year + ")";
+		} else {
+			modeadd = "(" + categoryname[difficulty] + ")";
+		}
+		newlog = "Mode: " + mode + " " + modeadd + "\n";
+		newlog += "Date: " + datestring + "\n";
+		if (mode === "Practice") {
+			newlog += "Time Spent: " + timeelapsedstring + "\n";
+		} else {
+			newlog += "Score: " + String(score) + "\n";
+		}
+		newlog += "Correct Answers: " + String(questionscorrect) + "\n";
+		newlog += "Questions Attempted: " + String(questionstotal) + "\n";
+		newlog += "Accuracy: " + accuracystring;
+	}
+
+	//this function saves the log to local storage
+	function logSave () {
+		let currentlog = localStorage?.getItem("studylog");
+		if (currentlog) {
+			currentlog = newlog + "\n\n\n" + currentlog;
+			let logcap = currentlog.split("\n\n\n", 50);
+			currentlog = logcap.join("\n\n\n")
+			localStorage.setItem("studylog", currentlog)
+		} else {
+			localStorage.setItem("studylog", newlog)
+		}
+	}
+
 	//practice mode start button code
 	function startPractice() {
 		difficulty = document.querySelector('input[name="difficultyp"]:checked')?.value;
 		questiontype = document.querySelector('input[name="questiontypep"]:checked')?.value;
-		mode = "practice";
+		mode = "Practice";
 		pkey = difficulty + questiontype;
 		
 		if (!questiontype || !difficulty) {
@@ -246,14 +341,14 @@
 			document.getElementById("settingsalertbox").style.display = "none"
 			}, 3000);
 		} else {
+		currentpage = "practicepage";
 		document.getElementById("practicesettings").style.display = "none";
 		document.getElementById("practicepage").style.display = "block";
 		window.numList()
 		window.randomQuestion()
 		imgpath = "questions/practice/" + difficulty + "/" + questiontype + "/" + questionnum + ".png";
 		document.getElementById("practicequestion").src = imgpath;
-		time = Date.now();
-		totaltime = time;
+		time = totaltime = datetime = Date.now();
 		document.addEventListener("keydown", function(e) {
 			if (e.key === "ArrowRight") {
 				practiceNext()
@@ -269,6 +364,7 @@
 		year = document.querySelector('input[name="yeart"]:checked')?.value;
 		alertboxcondition = (!difficulty || !year);
 		window.questionListMaker();
+		mode = "Test";
 	}
 	
 	//part of start test code for random test
@@ -276,6 +372,7 @@
 		difficulty = document.querySelector('input[name="difficultyr"]:checked')?.value;
 		alertboxcondition = (!difficulty);
 		window.randomquestionListMaker();
+		mode = "Randomized Test";
 	}
 
 	//test mode start button code
@@ -288,6 +385,8 @@
 			document.getElementById("settingsalertbox").style.display = "none"
 			}, 3000);
 		} else {
+		datetime = Date.now();
+		currentpage = "testpage";
 		imgpath = questionlist[currentquestion];
 		document.getElementById("currenttestquestion").textContent = "(" + currentquestion + ".)";
 		document.getElementById("testquestion").src = imgpath;
@@ -394,17 +493,27 @@
 	}
 	}
 	function practiceEndSession () {
+		currentpage = "practiceend";
 		totaltime = Date.now() - totaltime
+		if (totaltime > 60000) {
+			timeelapsedstring = String(Math.round(totaltime / 60000 * 100) / 100) + " minutes";
+		} else {
+			timeelapsedstring = String(Math.round(totaltime / 1000 * 100) / 100) + " seconds";
+		}
+		accuracy = Math.round(questionscorrect / questionstotal * 1000) / 10;
+		if (accuracy) {
+			accuracystring = String(accuracy) + "%";
+		} else {
+			accuracystring = "N/A";
+		}
+		window.logBuilder();
+		window.logSave();
 		document.getElementById("practicepage").style.display = "none";
 		document.getElementById("practiceend").style.display = "block";
 		document.getElementById("questionsattemptedpractice").textContent = questionstotal;
 		document.getElementById("questionscorrectpractice").textContent = questionscorrect;
-		document.getElementById("accuracypractice").textContent = Math.round(questionscorrect / questionstotal * 1000) / 10 + "%";
-		if (totaltime > 60000) {
-		document.getElementById("timeelapsedpractice").textContent = Math.round(totaltime / 60000 * 100) / 100 + " minutes";
-		} else {
-		document.getElementById("timeelapsedpractice").textContent = Math.round(totaltime / 1000 * 100) / 100 + " seconds";
-		}
+		document.getElementById("accuracypractice").textContent = accuracystring;
+		document.getElementById("timeelapsedpractice").textContent = timeelapsedstring;
 	}
 
 	document.getElementById("psubmit").addEventListener("click", practiceSubmit);
@@ -437,9 +546,10 @@
 
 	function testEnd() {
 		clearInterval(interval);
+		currentpage = "testend";
 		document.getElementById("testpage").style.display = "none";
 		document.getElementById("testend").style.display = "block";
-		for (i=1; i<61; i++) {
+		for (let i=1; i<61; i++) {
 			answer = document.querySelector('select[id="testquestionanswer'+ i.toString() +'"]').value;
 			imgpath = questionlist[i];
 			correctanswer = answerkey[imgpath];
@@ -457,10 +567,18 @@
 				document.getElementById("testanswerbutton"+i.toString()).style.color = "red"
 			}
 		}
+		accuracy = Math.round(questionscorrect / questionstotal * 1000) / 10;
+		if (accuracy) {
+			accuracystring = String(accuracy) + "%";
+		} else {
+			accuracystring = "N/A";
+		}
 		document.getElementById("testscore").textContent = score
-		document.getElementById("accuracytest").textContent = Math.round(questionscorrect / questionstotal * 1000) / 10 + "%";
+		document.getElementById("accuracytest").textContent = accuracystring;
 		document.getElementById("questionsattemptedtest").textContent = questionstotal;
 		document.getElementById("questionscorrecttest").textContent = questionscorrect;
+		window.logBuilder();
+		window.logSave();
 
 		const buttons = document.querySelectorAll(".testanswerbuttons");
 		buttons.forEach(function(button) {
@@ -474,6 +592,7 @@
 					document.getElementById("youranswertestimage").textContent = "None"
 				}
 				document.getElementById("questionboxtestresults").src = imgpath;
+				currentpage = "testendimage";
 				document.getElementById("testend").style.display = "none";
 				document.getElementById("testendimage").style.display = "block";
 			})
@@ -481,6 +600,7 @@
 	}
 
 	function testEndImage2testEnd() {
+		currentpage = "testend";
 		document.getElementById("testendimage").style.display = "none";
 		document.getElementById("testend").style.display = "block";
 	}
