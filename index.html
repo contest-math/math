@@ -6,6 +6,16 @@
 
 	<link rel="stylesheet" href="style.css">
 
+	<link rel="icon" type="image/png" href="/assets/icons/favicon-96x96.png" sizes="96x96">
+
+	<link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg">
+
+	<link rel="shortcut icon" href="/assets/icons/favicon.ico">
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+
+	<link rel="manifest" href="/assets/icons/site.webmanifest">
+
 </head> 
 
 <body>	
@@ -329,7 +339,22 @@
 	
 		<img class="questionboxtest" id="testquestion" src="" alt="Question image">
 
-		<div class="studybuttoncontainer gap5vw">
+		<div class="currenttestquestionanswerboxcontainer">
+
+			<div>Current Question:</div>
+
+			<select class="currenttestquestionanswerbox" id="testquestionanswercurrent">
+				<option value=""></option>
+				<option value="A">A</option>
+				<option value="B">B</option>
+				<option value="C">C</option>
+				<option value="D">D</option>
+				<option value="E">E</option>
+			</select>
+
+		</div>
+
+		<div class="studybuttoncontainer testbuttoncontainer">
 
 			<button class="studybutton" id="tback">
 			Back
@@ -349,7 +374,7 @@
 
 	<div class="testcontainers testanswerscontainer">
 
-		<div class="testquestioncolumncontainer">
+		<div class="testquestioncolumncontainer" id="testquestioncolumncontainer">
 
 			<div class="testquestioncolumn" id="questioncolumn1">
 			</div>
@@ -389,7 +414,7 @@
 			Answer Key:
 		</div>
 
-		<div class="testquestioncolumncontainer">
+		<div class="testquestioncolumncontainer" id="testanswercolumncontainer">
 
 			<div class="testquestioncolumn" id="answercolumn1">
 			</div>

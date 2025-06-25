@@ -217,6 +217,11 @@
 	height: 4.4vh;
 	}
 
+	.testbuttoncontainer {
+	bottom: 3.25%;
+	gap: 5vw;
+	}
+
 	.studybutton {
 	display: flex;
 	align-items: center;
@@ -365,12 +370,13 @@
 	display: flex;
 	gap: 1.5vw;
 	align-items: center;
-	transform: scale(1.5)
+	transform: scale(1.5) translateX(-.7%);
 	}
 	
 	.abcde span {
 	display: flex;
 	gap: .3vw;
+	align-items: center;
 	}
 
 	.testcontainers {
@@ -541,12 +547,33 @@
 	justify-content: center;
 	}
 
-
-
-
-	.gap5vw {
-	gap: 5vw;
+	.currenttestquestionanswerboxcontainer {
+	position: absolute;
+	bottom: 15%;
+	width: 50%;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	justify-content: center;
+	gap: 2vw;
+	align-items: center;
+	color: black;
+	font-family: "Tahoma";
+	text-align: center;
+	font-weight: bold;
+	font-size: 1.5vw;
+	line-height: 1;
 	}
+
+	.currenttestquestionanswerbox {
+	width: 3vw;
+	font-size: 1.5vw;
+	text-align: center;
+	}
+
+
+
+
 
 	.fontsize2vmax {
 	font-size: 2vmax;	

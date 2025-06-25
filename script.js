@@ -3,7 +3,7 @@
 	for (let i=1; i<21; i++) {
 		let string = '\n\t\t\t<div class="testquestionrow">';
 		string += '\n\t\t\t\t<button class="testquestionbuttons" id="testquestionbutton' + i.toString() + '">'+ i.toString() +'.</button>';
-		string += '\n\t\t\t\t<select id="testquestionanswer'+ i.toString() + '">';
+		string += '\n\t\t\t\t<select class="testquestionanswerselects" id="testquestionanswer'+ i.toString() + '">';
 		string += abcdestringhtml;
 		string += '\n\t\t\t\t</select>';
 		string += '\n\t\t\t</div>';
@@ -13,7 +13,7 @@
 	for (let i=21; i<41; i++) {
 		let string = '\n\t\t\t<div class="testquestionrow">';
 		string += '\n\t\t\t\t<button class="testquestionbuttons" id="testquestionbutton' + i.toString() + '">'+ i.toString() +'.</button>';
-		string += '\n\t\t\t\t<select id="testquestionanswer'+ i.toString() + '">';
+		string += '\n\t\t\t\t<select class="testquestionanswerselects" id="testquestionanswer'+ i.toString() + '">';
 		string += abcdestringhtml;
 		string += '\n\t\t\t\t</select>';
 		string += '\n\t\t\t</div>';
@@ -23,7 +23,7 @@
 	for (let i=41; i<61; i++) {
 		let string = '\n\t\t\t<div class="testquestionrow">';
 		string += '\n\t\t\t\t<button class="testquestionbuttons" id="testquestionbutton' + i.toString() + '">'+ i.toString() +'.</button>';
-		string += '\n\t\t\t\t<select id="testquestionanswer'+ i.toString() + '">';
+		string += '\n\t\t\t\t<select class="testquestionanswerselects" id="testquestionanswer'+ i.toString() + '">';
 		string += abcdestringhtml;
 		string += '\n\t\t\t\t</select>';
 		string += '\n\t\t\t</div>';
@@ -39,6 +39,7 @@
 		string += '\n\t\t\t</div>';
 		document.getElementById("answercolumn1").innerHTML += string;
 	}
+
 	for (let i=21; i<41; i++){
 		let string = '\n'
 		string += '\n\t\t\t<div class="testquestionrow">';
@@ -47,6 +48,7 @@
 		string += '\n\t\t\t</div>';
 		document.getElementById("answercolumn2").innerHTML += string;
 	}
+
 	for (let i=41; i<61; i++){
 		let string = '\n'
 		string += '\n\t\t\t<div class="testquestionrow">';
@@ -55,6 +57,19 @@
 		string += '\n\t\t\t</div>';
 		document.getElementById("answercolumn3").innerHTML += string;
 	}
+
+	//these two make the current question selector and the selector on the right for the current question match
+	const testquestionanswercurrentselect = document.getElementById("testquestionanswercurrent");
+
+	document.getElementById("testquestioncolumncontainer").addEventListener("change", function(event) {
+		if (event.target.id.replace("testquestionanswer", "") === currentquestion) {
+			testquestionanswercurrentselect.value = event.target.value;
+		}
+	})
+
+	testquestionanswercurrentselect.addEventListener("change", function() {
+		document.getElementById("testquestionanswer" + currentquestion).value = testquestionanswercurrentselect.value;
+	})
 
 	//this is setup for the different modes
 	let questiontype, difficulty, year, mode, pkey, questionnum, imgpath, time, totaltime, accuracy, imgpathcheck, answervalue, currentquestion, interval, alertboxcondition, abouttime, timeelapsedstring, accuracystring, datetime, newlog;
@@ -391,23 +406,28 @@
 		imgpath = questionlist[currentquestion];
 		document.getElementById("currenttestquestion").textContent = "(" + currentquestion + ".)";
 		document.getElementById("testquestion").src = imgpath;
-		const buttons = document.querySelectorAll(".testquestionbuttons");
-		buttons.forEach(function(button) {
-			button.addEventListener("click", function(e) {
+
+		document.getElementById("testquestioncolumncontainer").addEventListener("click", function(e) {
+			if (e.target.classList.contains("testquestionbuttons")) {
 				currentquestion = e.target.id.replace("testquestionbutton","")
 				imgpath = questionlist[currentquestion];
+				testquestionanswercurrentselect.value = document.getElementById("testquestionanswer" + currentquestion).value;
 				document.getElementById("currenttestquestion").textContent = "(" + currentquestion + ".)";
 				document.getElementById("testquestion").src = imgpath;
-			})
+			}
 		})
+		
 		document.addEventListener("keydown", function(e) {
-			if (e.key === "ArrowLeft") {
+			if (e.key === "ArrowLeft" && currentpage === "testpage") {
 				testBack();
+				e.preventDefault();
 			}
-			if (e.key === "ArrowRight") {
+			if (e.key === "ArrowRight" && currentpage === "testpage") {
 				testNext();
+				e.preventDefault();
 			}
 		})
+
 		document.getElementById("testsettings").style.display = "none";
 		document.getElementById("rtestsettings").style.display = "none";
 		document.getElementById("testpage").style.display = "block";
@@ -529,6 +549,7 @@
 			num += 1;
 			currentquestion = num.toString();
 			imgpath = questionlist[currentquestion];
+			testquestionanswercurrentselect.value = document.getElementById("testquestionanswer" + currentquestion).value;
 			document.getElementById("currenttestquestion").textContent = "(" + currentquestion + ".)";
 			document.getElementById("testquestion").src = imgpath;
 		}
@@ -540,6 +561,7 @@
 			num -= 1;
 			currentquestion = num.toString();
 			imgpath = questionlist[currentquestion];
+			testquestionanswercurrentselect.value = document.getElementById("testquestionanswer" + currentquestion).value;
 			document.getElementById("currenttestquestion").textContent = "(" + currentquestion + ".)";
 			document.getElementById("testquestion").src = imgpath;
 		}
@@ -581,9 +603,8 @@
 		window.logBuilder();
 		window.logSave();
 
-		const buttons = document.querySelectorAll(".testanswerbuttons");
-		buttons.forEach(function(button) {
-			button.addEventListener("click", function(e) {
+		document.getElementById("testanswercolumncontainer").addEventListener("click", function(e) {
+			if (e.target.classList.contains("testanswerbuttons")) {
 				currentquestion = Number(e.target.id.replace("testanswerbutton",""));
 				answer = document.querySelector('select[id="testquestionanswer'+ currentquestion.toString() +'"]').value;
 				imgpath = questionlist[currentquestion];
@@ -596,7 +617,7 @@
 				currentpage = "testendimage";
 				document.getElementById("testend").style.display = "none";
 				document.getElementById("testendimage").style.display = "block";
-			})
+			}
 		})
 	}
 
