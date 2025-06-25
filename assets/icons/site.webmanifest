@@ -3,19 +3,19 @@
   "short_name": "Math Practice",
   "icons": [
     {
-      "src": "/assets/icons/web-app-manifest-192x192.png",
+      "src": "assets/icons/web-app-manifest-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "maskable"
     },
     {
-      "src": "/assets/icons/web-app-manifest-512x512.png",
+      "src": "assets/icons/web-app-manifest-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
     }
   ],
   "theme_color": "#003559",
-  "background_color": "##fff8f8",
+  "background_color": "#fff8f8",
   "display": "standalone"
 }
