@@ -1,75 +1,47 @@
-	let abcdestringhtml = '\n\t\t\t\t\t<option value=""></option>\n\t\t\t\t\t<option value="A">A</option>\n\t\t\t\t\t<option value="B">B</option>\n\t\t\t\t\t<option value="C">C</option>\n\t\t\t\t\t<option value="D">D</option>\n\t\t\t\t\t<option value="E">E</option>';
 	//populate the question columns automatically
-	for (let i=1; i<21; i++) {
-		let string = '\n\t\t\t<div class="testquestionrow">';
-		string += '\n\t\t\t\t<button class="testquestionbuttons" id="testquestionbutton' + i.toString() + '">'+ i.toString() +'.</button>';
-		string += '\n\t\t\t\t<select class="testquestionanswerselects" id="testquestionanswer'+ i.toString() + '">';
-		string += abcdestringhtml;
-		string += '\n\t\t\t\t</select>';
-		string += '\n\t\t\t</div>';
-		document.getElementById("questioncolumn1").innerHTML += string;
-	}
+	for (let i=1; i<61; i++) {
 
-	for (let i=21; i<41; i++) {
-		let string = '\n\t\t\t<div class="testquestionrow">';
-		string += '\n\t\t\t\t<button class="testquestionbuttons" id="testquestionbutton' + i.toString() + '">'+ i.toString() +'.</button>';
-		string += '\n\t\t\t\t<select class="testquestionanswerselects" id="testquestionanswer'+ i.toString() + '">';
-		string += abcdestringhtml;
-		string += '\n\t\t\t\t</select>';
-		string += '\n\t\t\t</div>';
-		document.getElementById("questioncolumn2").innerHTML += string;
-	}
+		let string = `
+			<div class="testquestionrow">
+				<button class="testquestionbuttons" id="testquestionbutton${i}">${i}.</button>
+				<select class="testquestionanswerselects" id="testquestionanswer${i}">
+					<option value=""></option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>`
 
-	for (let i=41; i<61; i++) {
-		let string = '\n\t\t\t<div class="testquestionrow">';
-		string += '\n\t\t\t\t<button class="testquestionbuttons" id="testquestionbutton' + i.toString() + '">'+ i.toString() +'.</button>';
-		string += '\n\t\t\t\t<select class="testquestionanswerselects" id="testquestionanswer'+ i.toString() + '">';
-		string += abcdestringhtml;
-		string += '\n\t\t\t\t</select>';
-		string += '\n\t\t\t</div>';
-		document.getElementById("questioncolumn3").innerHTML += string;
+		if (i < 21) {
+			document.getElementById("questioncolumn1").insertAdjacentHTML("beforeend", string);
+		} else if (i < 41) {
+			document.getElementById("questioncolumn2").insertAdjacentHTML("beforeend", string);
+		} else {
+			document.getElementById("questioncolumn3").insertAdjacentHTML("beforeend", string);
+		}
+		
 	}
 
 	//populate the answer columns automatically
-	for (let i=1; i<21; i++){
-		let string = '\n'
-		string += '\n\t\t\t<div class="testquestionrow">';
-		string += '\n\t\t\t\t<button class="testanswerbuttons" id="testanswerbutton'+ i.toString()+'">'+ i.toString() + '.</button>';
-		string += '\n\t\t\t\t<span id="testanswer'+i.toString()+'"></span>';
-		string += '\n\t\t\t</div>';
-		document.getElementById("answercolumn1").innerHTML += string;
-	}
+	for (let i=1; i<61; i++) {
 
-	for (let i=21; i<41; i++){
-		let string = '\n'
-		string += '\n\t\t\t<div class="testquestionrow">';
-		string += '\n\t\t\t\t<button class="testanswerbuttons" id="testanswerbutton'+ i.toString()+'">'+ i.toString() + '.</button>';
-		string += '\n\t\t\t\t<span id="testanswer'+i.toString()+'"></span>';
-		string += '\n\t\t\t</div>';
-		document.getElementById("answercolumn2").innerHTML += string;
-	}
+		let string = `
+			<div class="testquestionrow">
+				<button class="testanswerbuttons" id="testanswerbutton${i}">${i}.</button>
+				<span id="testanswer${i}"></span>
+			</div>`
 
-	for (let i=41; i<61; i++){
-		let string = '\n'
-		string += '\n\t\t\t<div class="testquestionrow">';
-		string += '\n\t\t\t\t<button class="testanswerbuttons" id="testanswerbutton'+ i.toString()+'">'+ i.toString() + '.</button>';
-		string += '\n\t\t\t\t<span id="testanswer'+i.toString()+'"></span>';
-		string += '\n\t\t\t</div>';
-		document.getElementById("answercolumn3").innerHTML += string;
-	}
-
-	//these two make the current question selector and the selector on the right for the current question match
-	const testquestionanswercurrentselect = document.getElementById("testquestionanswercurrent");
-
-	document.getElementById("testquestioncolumncontainer").addEventListener("change", function(event) {
-		if (event.target.id.replace("testquestionanswer", "") === currentquestion) {
-			testquestionanswercurrentselect.value = event.target.value;
+		if (i < 21) {
+			document.getElementById("answercolumn1").insertAdjacentHTML("beforeend", string);
+		} else if (i < 41) {
+			document.getElementById("answercolumn2").insertAdjacentHTML("beforeend", string);
+		} else {
+			document.getElementById("answercolumn3").insertAdjacentHTML("beforeend", string);
 		}
-	})
 
-	testquestionanswercurrentselect.addEventListener("change", function() {
-		document.getElementById("testquestionanswer" + currentquestion).value = testquestionanswercurrentselect.value;
-	})
+	}
 
 	//this is setup for the different modes
 	let questiontype, difficulty, year, mode, pkey, questionnum, imgpath, time, totaltime, accuracy, imgpathcheck, answervalue, currentquestion, interval, alertboxcondition, abouttime, timeelapsedstring, accuracystring, datetime, newlog;
@@ -270,6 +242,18 @@
 		}
 	}
 
+	//these two make the current question selector and the selector on the right for the current question match
+	const testquestionanswercurrentselect = document.getElementById("testquestionanswercurrent");
+
+	document.getElementById("testquestioncolumncontainer").addEventListener("change", function(event) {
+		if (event.target.id.replace("testquestionanswer", "") === currentquestion) {
+			testquestionanswercurrentselect.value = event.target.value;
+		}
+	})
+
+	testquestionanswercurrentselect.addEventListener("change", function() {
+		document.getElementById("testquestionanswer" + currentquestion).value = testquestionanswercurrentselect.value;
+	})
 
 	//this function creates a timer
 	function testtimer() {

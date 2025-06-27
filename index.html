@@ -16,13 +16,15 @@
 
 	<link rel="manifest" href="assets/icons/site.webmanifest">
 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 </head> 
 
 <body>	
 
 <!--this contains all alertboxes-->
 
-<div class="alertboxcontainer">
+<div class="alertboxcontainer fullscreen">
 
 	<div class="alertbox1 none" id="settingsalertbox">
 	Please choose an option for each box!
@@ -53,9 +55,9 @@
 	About This Site	
 	</button>
 
-	<div class="cursorpointer" id="mainmenubutton">
+	<button class="bannerbuttons mainbannerbutton" id="mainmenubutton">
 	UIL Math Practice Site
-	</div>
+	</button>
 
 	<button class="bannerbuttons" id="logbutton">
 	Study Log
@@ -63,7 +65,7 @@
 </div>
 
 <!--this is the main menu section-->
-<div id="mainmenu">
+<div id="mainmenu" class="fullscreen">
 
 	<div class="bigtitle mainmenutitle">
 	Main Menu:
@@ -84,7 +86,7 @@
 </div>
 
 <!--this is the about this site page-->
-<div id="aboutthissite" class="none">
+<div id="aboutthissite" class="none fullscreen">
 	
 	<div class="bigtitle mainmenutitle">
 		About This Site:
@@ -102,7 +104,7 @@
 </div>
 
 <!--this is the study log page-->
-<div id="studylog" class="none">
+<div id="studylog" class="none fullscreen">
 
 	<div class="bigtitle mainmenutitle">
 		Study Log:
@@ -119,7 +121,7 @@
 
 <!--this is the practice mode settings section-->
 
-<div id="practicesettings" class="none">
+<div id="practicesettings" class="none fullscreen">
 
 	<div class="bigtitle settingstitle">
 	Practice Mode:
@@ -185,7 +187,7 @@
 
 
 <!--this is the practice mode section-->
-<div id="practicepage" class="none">
+<div id="practicepage" class="none fullscreen">
 
 	<img class="questionboxpractice" id="practicequestion" src="" alt="Question image">
 
@@ -237,7 +239,7 @@
 
 
 <!--this is the practice mode end section-->
-<div id="practiceend" class="none">
+<div id="practiceend" class="none fullscreen">
 	
 	<div class="practiceendbox">
 	<div class="fontsize2vmax">Stats:</div>
@@ -252,7 +254,7 @@
 
 <!--this is the test mode settings section-->
 
-<div id="testsettings" class="none">
+<div id="testsettings" class="none fullscreen">
 
 	<div class="bigtitle settingstitle">
 	Test Mode:
@@ -316,7 +318,7 @@
 
 
 <!--this is the test mode section-->
-<div id="testpage" class="none">
+<div id="testpage" class="none fullscreen">
 
 	<div class="testtimer">
 		<div class="testtimernumber" id="testtimer1">
@@ -396,7 +398,7 @@
 </div>
 
 <!--this is the test mode end section-->
-<div id="testend" class="none">
+<div id="testend" class="none fullscreen">
 
 	<div class="testcontainers testquestionscontainer">
 		<div class="practiceendbox">
@@ -432,7 +434,7 @@
 </div>
 
 <!--this is the image display page for the test answer page-->
-<div id="testendimage" class="none">
+<div id="testendimage" class="none fullscreen">
 
 	<img class="questionboxpractice" id="questionboxtestresults" src="" alt="Question image">
 
@@ -461,7 +463,7 @@
 
 <!--this is the random test mode settings section-->
 
-<div id="rtestsettings" class="none">
+<div id="rtestsettings" class="none fullscreen">
 
 	<div class="bigtitle settingstitle">
 	Randomized Test Mode:

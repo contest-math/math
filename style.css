@@ -1,27 +1,33 @@
 
 	html, body {
-	height: 100%;
-	width: 100%;
+	height: 100dvh;
+	width: 100vw;
 	margin: 0;
 	padding: 0;
 	background-image: linear-gradient(to bottom, #e6e6ff, #fff8f8, #fff8f8);
+	}
+
+	.fullscreen {
+	height: 100dvh;
+	width: 100vw;
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 0;
+	padding: 0;	
 	}
 
 	.titlebanner {
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
-	color: white;
-	font-family: "Tahoma";
-	font-weight: bold;
-	font-size: 1.7vmax;
 	width: 100vw;
-	height: 8vh;
+	height: 8dvh;
 	background-color: #003559;
 	position: absolute;
 	top: 0px;
 	left: 0px;
-	line-height: 1;
+	z-index: 100;
 	}
 
 	.bannerbuttons {
@@ -40,6 +46,11 @@
 	line-height: 1;
 	}
 
+	.mainbannerbutton {
+	font-size: 1.7vmax;	
+	width: auto;
+	}
+
 	.bigtitle {
 	color: black;
 	font-family: "Tahoma";
@@ -54,9 +65,9 @@
 	left: 50%;
 	transform: translateX(-50%);
 	width: 50vw;
-	height: 22.7vh;
-	top: 8vh;
-	line-height: 22.7vh;
+	height: 22.7dvh;
+	top: 8dvh;
+	line-height: 22.7dvh;
 	z-index: 3;
 	}
 
@@ -65,24 +76,24 @@
 	left: 50%;
 	transform: translateX(-50%);
 	width: 50vw;
-	height: 22.7vh;
-	top: 6.8vh;
-	line-height: 22.7vh;
+	height: 22.7dvh;
+	top: 6.8dvh;
+	line-height: 22.7dvh;
 	z-index: 3;
 	}
 
 	.mainmenubuttons {
 	width: 20vw;
-	height: 7.2vh;
+	height: 7.2dvh;
 	color: white;
 	font-family: "Tahoma";
 	text-align: center;
 	font-weight: bold;
 	font-size: 1.4vmax;
-	line-height: 6vh;
+	line-height: 6dvh;
 	background-color: #ea3031;
-	border: .6vh solid #000000;
-	border-radius: 1vh;
+	border: .6dvh solid #000000;
+	border-radius: 1dvh;
 	position: absolute;
 	left: 50%;
 	transform: translateX(-50%);
@@ -94,28 +105,28 @@
 	}
 
 	.practicebutton {
-	top: 30.7vh;	
+	top: 30.7dvh;	
 	}
 
 	.testbutton {
-	top: 50.7vh;	
+	top: 50.7dvh;	
 	}
 
 	.rtestbutton {
-	top: 70.7vh;	
+	top: 70.7dvh;	
 	}
 
 
 	.bigsettingsbox {
 	display: flex;
 	width: 70vw;
-	height: 50vh;
+	height: 50dvh;
 	position: absolute;
-	top: 28.6vh;
+	top: 28.6dvh;
 	left: 50%;
 	transform: translateX(-50%);
-	border: 4px solid #000000;
-	border-radius: 1vh;
+	border: .6dvh solid #000000;
+	border-radius: 1dvh;
 	}
 
 	.settings-titles {
@@ -136,9 +147,9 @@
 	}
 
 	.settings-boxes {
-	border: 4px solid #000000;
+	border: .6dvh solid #000000;
 	position: absolute;
-	border-radius: 1vh;
+	border-radius: 1dvh;
 	overflow-y: auto;
 	}
 
@@ -185,14 +196,14 @@
 	left: 50%;
 	transform: translateX(-50%);
 	width: 10vw;
-	height: 4.4vh;
+	height: 4.4dvh;
 	color: #FFFFFF;
 	font-weight: bold;
 	font-size: 1.3vmax;
 	font-family: "Tahoma";
 	background-color: #ea3031;
-	border: 4px solid #000000;
-	border-radius: 1vh;
+	border: .6dvh solid #000000;
+	border-radius: 1dvh;
 	cursor: pointer;
 	}
 
@@ -214,7 +225,7 @@
 	position: absolute;
 	bottom: 10.2%;
 	width: 100%;
-	height: 4.4vh;
+	height: 4.4dvh;
 	}
 
 	.testbuttoncontainer {
@@ -227,14 +238,14 @@
 	align-items: center;
 	justify-content: center;
 	width: 10vw;
-	height: 4.4vh;
+	height: 4.4dvh;
 	color: #FFFFFF;
 	font-weight: bold;
 	font-size: 1.3vmax;
 	font-family: "Tahoma";
 	background-color: #ea3031;
-	border: 4px solid #000000;
-	border-radius: 1vh;
+	border: .6dvh solid #000000;
+	border-radius: 1dvh;
 	cursor: pointer;
 	}
 	
@@ -243,10 +254,10 @@
 	}
 
 	.submitbutton {
-	bottom: 22%;
+	bottom: 20%;
 	font-size: 1vmax;
 	width: 6vw;
-	height: 3.3vh;
+	height: 3.3dvh;
 	cursor: pointer;
 	}
 
@@ -260,7 +271,7 @@
 	left: 50%;
 	background-color: white;
 	transform: translateX(-50%);
-	border: 4px solid #000000;
+	border: .6dvh solid #000000;
 	color: red;
 	font-weight: bold;
 	font-size: 0.8vmax;
@@ -279,7 +290,7 @@
 	left: 50%;
 	background-color: white;
 	transform: translateX(-50%);
-	border: 4px solid #000000;
+	border: .6dvh solid #000000;
 	color: red;
 	font-weight: bold;
 	font-size: 1.3vmax;
@@ -291,7 +302,7 @@
 	.alertboxcontainer {
 	display: flex;
 	width: 100vw;
-	height: 100vh;
+	height: 100dvh;
 	top: 0px;
 	left: 0px;
 	}
@@ -300,11 +311,11 @@
 	position: absolute;
 	width: 45vw;
 	height: auto;
-	max-height: 50vh;
+	max-height: 50dvh;
 	left: 50%;
-	bottom: 35vh;
+	bottom: 35dvh;
 	transform: translate(-50%, 0%);
-	outline: 4px solid #000000;
+	outline: .6dvh solid #000000;
 	}
 
 	.practiceendbox {
@@ -317,12 +328,12 @@
 	left: 50%;
 	top: 50%;
 	transform: translate(-50%, -50%);
-	border: 4px solid #000000;
-	border-radius: 1vh;
+	border: .6dvh solid #000000;
+	border-radius: 1dvh;
 	color: #000000;
 	align-items: center;
 	justify-content: center;
-	gap: 2vh;
+	gap: 2dvh;
 	text-align: center;
 	font-weight: bold;
 	font-size: 1.3vmax;
@@ -337,8 +348,8 @@
 	left: 50%;
 	top: 50%;
 	transform: translate(-50%, -50%);
-	border: 4px solid #000000;
-	border-radius: 1vh;
+	border: .6dvh solid #000000;
+	border-radius: 1dvh;
 	color: #000000;
 	padding: 4%;
 	font-weight: bold;
@@ -381,7 +392,7 @@
 
 	.testcontainers {
 	position: absolute;
-	height: 84vh;
+	height: 84dvh;
 	outline: .2vw solid black;
 	}
 
@@ -411,7 +422,7 @@
 	left: 50%;
 	top: 40.5%;
 	transform: translate(-50%, -50%);
-	outline: 4px solid #000000;
+	outline: .6dvh solid #000000;
 	}
 
 	.testquestioncolumn {
@@ -479,9 +490,9 @@
 	display: flex;
 	position: absolute;
 	width: 8vw;
-	height: 6vh;
+	height: 6dvh;
 	left: 50vw;
-	top: 8.75vh;
+	top: 8.75dvh;
 	transform: translateX(-50%);
 	font-weight: bold;
 	font-size: 1.5vmax;
@@ -490,7 +501,7 @@
 	justify-content: center;
 	gap: .2vw;
 	align-items: center;
-	border: 4px solid #000000;
+	border: .6dvh solid #000000;
 	background-color: white;
 	line-height: 1;
 	box-sizing: border-box;
@@ -506,14 +517,14 @@
 	.testresultsimageanswersbox {
 	position: absolute;
 	display: flex;
-	top: 65vh;
+	top: 65dvh;
 	left: 50%;
 	transform: translateX(-50%);
-	outline: 4px solid #000000;
+	outline: .6dvh solid #000000;
 	justify-content: space-evenly;
 	align-items: center;
 	width: 45vw;
-	height: 10vh;
+	height: 10dvh;
 	background-color: white;
 	}
 
@@ -531,17 +542,17 @@
 
 	.pausebutton {
 	position: absolute;
-	width: 6vh;
-	height: 6vh;
+	width: 6dvh;
+	height: 6dvh;
 	left: 55vw;
-	top: 8.75vh;
+	top: 8.75dvh;
 	cursor: pointer;
 	pointer-events: auto;
 	}
 
 	.currenttestquestion {
 	position: relative;
-	bottom: .3vh;
+	bottom: .3dvh;
 	width: 2vw;
 	display: flex;
 	justify-content: center;
