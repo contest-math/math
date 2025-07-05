@@ -1,3 +1,11 @@
+	let websiteversion = localStorage?.getItem("version");
+
+	if (websiteversion != "1") {
+		localStorage.removeItem("studylog");
+	}
+
+	localStorage.setItem("version", "1");	
+	
 	//populate the question columns automatically
 	for (let i=1; i<61; i++) {
 
@@ -303,7 +311,8 @@
 		} else {
 			modeadd = "(" + categoryname[difficulty] + ")";
 		}
-		newlog = "Mode: " + mode + " " + modeadd + "\n";
+		newlog = "Subject: Mathematics\n"
+		newlog += "Mode: " + mode + " " + modeadd + "\n";
 		newlog += "Date: " + datestring + "\n";
 		if (mode === "Practice") {
 			newlog += "Time Spent: " + timeelapsedstring + "\n";
