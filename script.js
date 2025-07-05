@@ -112,7 +112,7 @@
 
 	//to main menu button code
 	document.getElementById("mainmenubutton").addEventListener("click", function () {
-	location.reload();
+		window.location.assign("https://contest-math.github.io")
 	})
 
 	//about this site button code
@@ -424,8 +424,9 @@
 		document.getElementById("testsettings").style.display = "none";
 		document.getElementById("rtestsettings").style.display = "none";
 		document.getElementById("testpage").style.display = "block";
-		}
 		testtimer()
+		}
+		
 	}
 	document.getElementById("startbuttont").addEventListener("click", function() {
 		window.startTest();
