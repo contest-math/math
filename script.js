@@ -205,7 +205,7 @@
 		numList();
 		for (let i = 1; i < 22; i++) {
 			randomQuestion();
-			imgpath = "questions/practice/" + difficulty + "/" + "algebra" + "/" + questionnum + ".png";
+			imgpath = "questions/practice/" + difficulty + "/" + "algebra" + "/" + questionnum + ".webp";
 			questionlist[i] = imgpath
 		}
 		pkey = difficulty + "geometry";
@@ -213,7 +213,7 @@
 		numList();
 		for (let i = 22; i < 40; i++) {
 			randomQuestion();
-			imgpath = "questions/practice/" + difficulty + "/" + "geometry" + "/" + questionnum + ".png";
+			imgpath = "questions/practice/" + difficulty + "/" + "geometry" + "/" + questionnum + ".webp";
 			questionlist[i] = imgpath
 		}
 		pkey = difficulty + "calculus";
@@ -221,7 +221,7 @@
 		numList();
 		for (let i = 40; i < 52; i++) {
 			randomQuestion();
-			imgpath = "questions/practice/" + difficulty + "/" + "calculus" + "/" + questionnum + ".png";
+			imgpath = "questions/practice/" + difficulty + "/" + "calculus" + "/" + questionnum + ".webp";
 			questionlist[i] = imgpath
 		}
 		pkey = difficulty + "statistics";
@@ -229,7 +229,7 @@
 		numList();
 		for (let i = 52; i < 61; i++) {
 			randomQuestion();
-			imgpath = "questions/practice/" + difficulty + "/" + "statistics" + "/" + questionnum + ".png";
+			imgpath = "questions/practice/" + difficulty + "/" + "statistics" + "/" + questionnum + ".webp";
 			questionlist[i] = imgpath
 		}
 	}
@@ -237,7 +237,7 @@
 	//this function creates a questionlist for regular test mode
 	function questionListMaker () {
 		for (let i=1; i < 61; i++) {
-		imgpath = "questions/test/" + year + "/" + difficulty + "/" + i.toString() + ".png";
+		imgpath = "questions/test/" + year + "/" + difficulty + "/" + i.toString() + ".webp";
 		questionlist[i] = imgpath
 		}
 	}
@@ -346,7 +346,7 @@
 		document.getElementById("practicepage").style.display = "block";
 		window.numList()
 		window.randomQuestion()
-		imgpath = "questions/practice/" + difficulty + "/" + questiontype + "/" + questionnum + ".png";
+		imgpath = "questions/practice/" + difficulty + "/" + questiontype + "/" + questionnum + ".webp";
 		document.getElementById("practicequestion").src = imgpath;
 		time = totaltime = datetime = Date.now();
 		document.addEventListener("keydown", function(e) {
@@ -475,7 +475,7 @@
 		document.querySelectorAll('input[name="practiceanswer"]').forEach(rb => rb.checked = false);
 		if (maxnum[pkey] != "0") {
 			randomQuestion();
-			imgpath = "questions/practice/" + difficulty + "/" + questiontype + "/" + questionnum + ".png";
+			imgpath = "questions/practice/" + difficulty + "/" + questiontype + "/" + questionnum + ".webp";
 			document.getElementById("practicequestion").src = imgpath;
 		} else {
 			totaltime = Date.now() - totaltime
